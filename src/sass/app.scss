@@ -1,0 +1,19 @@
+html {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(circle, #fff, #bbb);
+  background-size: 100% 100%;
+  min-width: 395px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: min-content repeat(3, 1fr) min-content;
+  height: 100vh;
+  margin: auto;
+}
