@@ -5,7 +5,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
 import HomePage from "./components/HomePage";
 import Footer from "./components/Footer";
-import AboutPage from './components/AboutPage'
+import AboutPage from "./components/AboutPage";
+import TaskDashboardPage from "./components/TaskDashboardPage";
+import ContactPage from "./components/ContactPage";
 
 //Style
 import "./sass/normalize.scss";
@@ -28,16 +30,29 @@ export class App extends React.Component<IProps, {}> {
             }}
           ></Route>
           <Route
-              exact
-              path="/About"
-              render={() => {
-                return (
-                  <>
-                    <AboutPage />
-                  </>
-                );
-              }}
-            ></Route>
+            exact
+            path="/About"
+            render={() => {
+              return (
+                <>
+                  <AboutPage />
+                </>
+              );
+            }}
+          ></Route>
+          <Route
+            exact
+            path="/Contact"
+            render={() => {
+              return <ContactPage />;
+            }}
+          ></Route>
+          <Route
+            path="/TaskDashboard"
+            render={() => {
+              return <TaskDashboardPage />;
+            }}
+          ></Route>
           <Footer />
         </div>
       </Router>
