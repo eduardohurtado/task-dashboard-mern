@@ -23,7 +23,20 @@ interface ISubmitEvent {
   preventDefault: any;
 }
 
-interface IChangeEvent {}
+interface IChangeEvent {
+  target: HTMLInputElement | HTMLTextAreaElement;
+}
+
+interface IAppState {
+  tasks: {
+    id: number;
+    title: string;
+    description: string;
+    done: boolean;
+  }[];
+}
+
+interface IAction {}
 
 //Style SCSS
 import "../sass/taskForm.scss";
@@ -31,7 +44,6 @@ import "../sass/taskForm.scss";
 class TaskForm extends Component<IProps, IState, any> {
   constructor(props: IProps) {
     super(props);
-    // this.props = props;
 
     this.state = {
       title: "",
@@ -52,10 +64,12 @@ class TaskForm extends Component<IProps, IState, any> {
   };
 
   onChange = (e: IChangeEvent) => {
+    const name: string = e.target.name;
+    const value = e.target.value;
     //Asign the new valor everytime something is typed.
     this.setState({
-      [e.target.name]: e.target.value,
-    });
+      [name]: value,
+    } as Pick<IState, keyof IState>);
   };
 
   render() {
@@ -68,8 +82,8 @@ class TaskForm extends Component<IProps, IState, any> {
             type="text"
             name="title"
             placeholder="Write the task title."
-            maxLength="20"
-            size="25"
+            maxLength={20}
+            size={25}
             onChange={this.onChange}
             value={this.state.title}
           />{" "}
@@ -78,9 +92,9 @@ class TaskForm extends Component<IProps, IState, any> {
           <textarea
             name="description"
             placeholder="Write the task description."
-            cols="30"
-            rows="3"
-            maxLength="40"
+            cols={30}
+            rows={3}
+            maxLength={40}
             style={{ resize: "none" }}
             onChange={this.onChange}
             value={this.state.description}
@@ -93,13 +107,13 @@ class TaskForm extends Component<IProps, IState, any> {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: IAppState) => ({
   //Passing the current state of "store.js" because
   Redux: state, //mapDispatchToProps don't work without
 }); //define mapStateToProps.
 
-const mapDispatchToProps = (dispatch) => ({
-  addTaskRedux(title, description) {
+const mapDispatchToProps = (dispatch: IAction) => ({
+  addTaskRedux(title: string, description: string) {
     dispatch({
       type: "ADD_NEW_TASK",
       title,
