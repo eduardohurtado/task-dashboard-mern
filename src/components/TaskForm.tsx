@@ -72,8 +72,8 @@ class TaskForm extends Component<IProps, IState, any> {
             type="text"
             name="title"
             placeholder="Write the task title."
-            maxLength={20}
-            size={25}
+            maxLength="20"
+            size="25"
             onChange={this.onChange}
             value={this.state.title}
           />{" "}
@@ -82,9 +82,9 @@ class TaskForm extends Component<IProps, IState, any> {
           <textarea
             name="description"
             placeholder="Write the task description."
-            cols={30}
-            rows={3}
-            maxLength={40}
+            cols="30"
+            rows="3"
+            maxLength="40"
             style={{ resize: "none" }}
             onChange={this.onChange}
             value={this.state.description}
