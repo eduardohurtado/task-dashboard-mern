@@ -11,7 +11,7 @@ interface IProps {
     description: string;
     done: boolean;
   }[];
-  addTaskRedux: any;
+  addTaskRedux: (type: string, title: string, description: string) => void;
 }
 
 interface IState {
@@ -26,17 +26,6 @@ interface ISubmitEvent {
 interface IChangeEvent {
   target: HTMLInputElement | HTMLTextAreaElement;
 }
-
-interface IAppState {
-  tasks: {
-    id: number;
-    title: string;
-    description: string;
-    done: boolean;
-  }[];
-}
-
-interface IAction {}
 
 //Style SCSS
 import "../sass/taskForm.scss";
@@ -57,6 +46,7 @@ class TaskForm extends Component<IProps, IState, any> {
       alert("Please, fill all the requested information.");
     } else {
       this.props.addTaskRedux(
+        "ADD_NEW_TASK",
         this.state.title.toUpperCase(),
         this.state.description
       );
@@ -107,15 +97,15 @@ class TaskForm extends Component<IProps, IState, any> {
   }
 }
 
-const mapStateToProps = (state: IAppState) => ({
+const mapStateToProps = (state: IProps) => ({
   //Passing the current state of "store.js" because
   Redux: state, //mapDispatchToProps don't work without
 }); //define mapStateToProps.
 
-const mapDispatchToProps = (dispatch: IAction) => ({
-  addTaskRedux(title: string, description: string) {
+const mapDispatchToProps = (dispatch: IProps) => ({
+  addTaskRedux() {
     dispatch({
-      type: "ADD_NEW_TASK",
+      type,
       title,
       description,
     });
