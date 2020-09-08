@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-//Style CSS
+//Style SCSS
 import "../sass/aboutPage.scss";
 
 export default class AboutPage extends Component {

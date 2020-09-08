@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import logoGit from "../img/github.png";
 import logoLink from "../img/linkedin.png";
 
-//Style CSS
+//Style SCSS
 import "../sass/footer.scss";
 
 export default class Footer extends Component {

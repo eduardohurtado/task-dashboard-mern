@@ -1,7 +1,7 @@
 import { createStore } from "redux";
 
 //Interfaces
-interface IAppState {
+export interface IAppState {
   tasks: {
     id: number;
     title: string;

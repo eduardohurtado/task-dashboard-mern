@@ -10,14 +10,13 @@ import { ThunkDispatch } from "redux-thunk";
 
 //Interfaces
 interface IProps {
-  tasks: {
+  tasks?: {
     id: number;
     title: string;
     description: string;
     done: boolean;
   }[];
-
-  addTaskRedux: (type: string, title: string, description: string) => void;
+  addTaskRedux: (title: string, description: string) => void;
 }
 
 interface IState {
@@ -49,7 +48,6 @@ class TaskForm extends Component<IProps, IState, AnyAction> {
       alert("Please, fill all the requested information.");
     } else {
       this.props.addTaskRedux(
-        "ADD_NEW_TASK",
         this.state.title.toUpperCase(),
         this.state.description
       );
@@ -119,9 +117,9 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AnyAction>) => {
   return {
     addTaskRedux: () =>
       dispatch({
-        type,
-        title,
-        description,
+        type: "ADD_NEW_TASK",
+        title: "",
+        description: "",
       }),
   };
 };
