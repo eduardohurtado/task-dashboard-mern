@@ -5,6 +5,8 @@ import "../sass/taskForm.scss";
 
 //Global state REDUX
 import { connect } from "react-redux";
+import { AnyAction } from "redux";
+import { ThunkDispatch } from "redux-thunk";
 
 //Interfaces
 interface IProps {
@@ -14,6 +16,7 @@ interface IProps {
     description: string;
     done: boolean;
   }[];
+
   addTaskRedux: (type: string, title: string, description: string) => void;
 }
 
@@ -30,7 +33,7 @@ interface IChangeEvent {
   target: HTMLInputElement | HTMLTextAreaElement;
 }
 
-class TaskForm extends Component<IProps, IState, any> {
+class TaskForm extends Component<IProps, IState, AnyAction> {
   constructor(props: IProps) {
     super(props);
 
@@ -102,14 +105,25 @@ const mapStateToProps = (state: IProps) => ({
   Redux: state, //mapDispatchToProps don't work without
 }); //define mapStateToProps.
 
-const mapDispatchToProps = (dispatch: IProps) => ({
-  addTaskRedux() {
-    dispatch({
-      type,
-      title,
-      description,
-    });
-  },
-});
+// const mapDispatchToProps = (dispatch: IProps) => ({
+//   addTaskRedux() {
+//     dispatch({
+//       type,
+//       title,
+//       description,
+//     });
+//   },
+// });
+
+const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AnyAction>) => {
+  return {
+    addTaskRedux: () =>
+      dispatch({
+        type,
+        title,
+        description,
+      }),
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskForm);
