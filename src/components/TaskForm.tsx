@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+//Style SCSS
+import "../sass/taskForm.scss";
+
 //Global state REDUX
 import { connect } from "react-redux";
 
@@ -26,9 +29,6 @@ interface ISubmitEvent {
 interface IChangeEvent {
   target: HTMLInputElement | HTMLTextAreaElement;
 }
-
-//Style SCSS
-import "../sass/taskForm.scss";
 
 class TaskForm extends Component<IProps, IState, any> {
   constructor(props: IProps) {
@@ -72,8 +72,8 @@ class TaskForm extends Component<IProps, IState, any> {
             type="text"
             name="title"
             placeholder="Write the task title."
-            maxLength="20"
-            size="25"
+            maxLength={20}
+            size={25}
             onChange={this.onChange}
             value={this.state.title}
           />{" "}
@@ -82,9 +82,9 @@ class TaskForm extends Component<IProps, IState, any> {
           <textarea
             name="description"
             placeholder="Write the task description."
-            cols="30"
-            rows="3"
-            maxLength="40"
+            cols={30}
+            rows={3}
+            maxLength={40}
             style={{ resize: "none" }}
             onChange={this.onChange}
             value={this.state.description}
