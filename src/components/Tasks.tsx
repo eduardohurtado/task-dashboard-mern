@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, InsHTMLAttributes } from "react";
 
 //Global state REDUX
 import { connect } from "react-redux";
@@ -8,21 +8,13 @@ import Task from "./Task";
 
 //Interfaces
 interface IProps {
-  Redux: {
+  tasks?: {
     id: number;
     title: string;
     description: string;
     done: boolean;
-  }[];
-}
-
-interface IMapToProps {
-  tasks: {
-    id: number;
-    title: string;
-    description: string;
-    done: boolean;
-  }[];
+  };
+  Redux?: [];
 }
 
 class Tasks extends Component<IProps, any> {
@@ -31,11 +23,11 @@ class Tasks extends Component<IProps, any> {
   }
 
   render() {
-    return this.props.Redux?.map((e) => <Task key={e.id} propTask={e} />);
+    return this.props.Redux?.map((e: any) => <Task key={e.id} propTask={e} />);
   }
 }
 
-const mapStateToProps = (state: IMapToProps) => ({
+const mapStateToProps = (state: IProps) => ({
   Redux: state.tasks,
 });
 

@@ -24,7 +24,10 @@ interface IProps {
     title: string;
     description: string;
     done: boolean;
-  }[];
+  };
+
+  checkDoneRedux: (id: number) => void;
+  deleteTaskRedux: (id: number) => void;
 }
 
 class Task extends Component<IProps, any> {
@@ -82,20 +85,20 @@ class Task extends Component<IProps, any> {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: IProps) => ({
   //Passing the current state of "store.js" because
   Redux: state, //mapDispatchToProps don't work without
 }); //define mapStateToProps.
 
-const mapDispatchToProps = (dispatch) => ({
-  checkDoneRedux(id) {
+const mapDispatchToProps = (dispatch: any) => ({
+  checkDoneRedux(id: number) {
     dispatch({
       type: "TASK_TEXT_STYLE",
       id,
     });
   },
 
-  deleteTaskRedux(id) {
+  deleteTaskRedux(id: number) {
     dispatch({
       type: "TASK_DELETE",
       id,

@@ -6,7 +6,7 @@ import "../sass/taskForm.scss";
 //Global state REDUX
 import { connect } from "react-redux";
 import { AnyAction } from "redux";
-import { ThunkDispatch } from "redux-thunk";
+// import { ThunkDispatch } from "redux-thunk";
 
 //Interfaces
 interface IProps {
@@ -15,7 +15,7 @@ interface IProps {
     title: string;
     description: string;
     done: boolean;
-  }[];
+  };
   addTaskRedux: (title: string, description: string) => void;
 }
 
@@ -103,25 +103,25 @@ const mapStateToProps = (state: IProps) => ({
   Redux: state, //mapDispatchToProps don't work without
 }); //define mapStateToProps.
 
-// const mapDispatchToProps = (dispatch: IProps) => ({
-//   addTaskRedux() {
-//     dispatch({
-//       type,
-//       title,
-//       description,
-//     });
-//   },
-// });
+const mapDispatchToProps = (dispatch: any) => ({
+  addTaskRedux() {
+    dispatch({
+      type: "ADD_NEW_TASK",
+      title: "",
+      description: "",
+    });
+  },
+});
 
-const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AnyAction>) => {
-  return {
-    addTaskRedux: () =>
-      dispatch({
-        type: "ADD_NEW_TASK",
-        title: "",
-        description: "",
-      }),
-  };
-};
+// const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AnyAction>) => {
+//   return {
+//     addTaskRedux: () =>
+//       dispatch({
+//         type: "ADD_NEW_TASK",
+//         title: "",
+//         description: "",
+//       }),
+//   };
+// };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskForm);
