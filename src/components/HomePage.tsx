@@ -6,9 +6,9 @@ import "../sass/homePage.scss";
 //Images
 import logoHtml from "../img/html-5.png";
 import logoScss from "../img/scss.png";
-import logoJs from "../img/js.png";
 import logoReact from "../img/react.png";
 import logoRedux from "../img/redux.png";
+import logoTs from "../img/typescript.png";
 
 export default class HomePage extends Component {
   render() {
@@ -22,10 +22,10 @@ export default class HomePage extends Component {
         <h2>Side technologies + MERN stack:</h2>
 
         <img src={logoHtml} alt="Html5" height="110px" />
-        <img src={logoJs} alt="Javascript" height="110px" />
+        <img src={logoTs} alt="Typescript" height="110px" />
         <img src={logoScss} alt="SCSS" height="110px" />
         <img src={logoReact} alt="React" height="110px" />
-        <img className="grayIncoming" src={logoRedux} alt="Redux" height="110px" />
+        <img src={logoRedux} alt="Redux" height="110px" />
       </div>
     );
   }
