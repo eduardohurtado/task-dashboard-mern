@@ -4,14 +4,6 @@
   background: #123c69;
   overflow: auto;
 
-  p {
-    color: white;
-    font-size: 18px;
-    margin-left: 10px;
-    cursor: default;
-    float: left;
-  }
-
   .itemR {
     display: flex;
     float: right;
@@ -36,4 +28,7 @@
 #pBy {
   float: right;
   margin: 0 10px 0 10px;
+  font-size: 18px;
+  color: white;
+  cursor: default;
 }

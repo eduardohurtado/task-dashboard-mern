@@ -36,7 +36,6 @@ export default class Footer extends Component {
 
     return (
       <div className="footer">
-        <p>Social media: </p>
         <a
           href="https://github.com/eduardohurtado"
           rel="noopener noreferrer"
