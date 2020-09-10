@@ -12,6 +12,7 @@ import LogoTs from "../img/typescript.png";
 import LogoMongoDb from "../img/mongodb.png";
 import LogoExpress from "../img/express.png";
 import LogoNodeJs from "../img/nodejs.png";
+import LogojQuery from "../img/jquery.png";
 
 export default class HomePage extends Component {
   render() {
@@ -27,6 +28,7 @@ export default class HomePage extends Component {
         <img src={LogoHtml} alt="Html5" height="110px" />
         <img src={LogoTs} alt="Typescript" height="110px" />
         <img src={LogoScss} alt="SCSS" height="110px" />
+        <img src={LogojQuery} alt="jQuery" height="110px" />
         <img src={LogoRedux} alt="Redux" height="110px" />
 
         <h2>MERN stack:</h2>
