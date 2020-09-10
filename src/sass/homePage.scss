@@ -6,7 +6,7 @@
   padding: 5px;
 
   p {
-    font-size: 30px;
+    font-size: 25px;
     color: black;
     cursor: default;
   }
@@ -14,6 +14,7 @@
   h2 {
     color: #2e8b57;
     font-weight: 800;
+    cursor: default;
   }
 
   img {
@@ -30,4 +31,5 @@
 
 .grayIncoming {
   filter: grayscale(1);
+  color: gray;
 }
