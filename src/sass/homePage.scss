@@ -5,6 +5,12 @@
   overflow: auto;
   padding: 5px;
 
+  .rowWrap {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
   p {
     font-size: 25px;
     color: black;

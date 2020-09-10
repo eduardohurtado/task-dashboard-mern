@@ -1,25 +1,41 @@
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
+
+/**
+ * Photo presentational component
+ */
+
+//Component styles
+import "./blur.css";
 
 //Interfaces
 interface IImage {
-  image: {
-    alt: string;
-    height: string;
-    src: any;
-  };
+  alt: string;
+  height: string;
+  width: string;
+  src: any;
 }
 
-const MyImage = ({ image }: IImage) => (
-  <div>
-    <LazyLoadImage
-      alt={image.alt}
-      height={image.height}
-      src={image.src}
-      effect="blur"
-    />
-  </div>
-);
+class Photo extends React.Component<IImage, any> {
+  constructor(props: IImage) {
+    super(props);
+  }
 
-export default MyImage;
+  render() {
+    const { alt, height, src, width } = this.props;
+
+    return (
+      <div>
+        <LazyLoadImage
+          alt={alt}
+          height={height}
+          width={width}
+          src={src}
+          effect="blur"
+        />
+      </div>
+    );
+  }
+}
+
+export default Photo;

@@ -2,19 +2,38 @@
   grid-column: 1 / span 3;
   grid-row: 5 / span 1;
   background: #123c69;
+  overflow: auto;
 
   p {
     color: white;
     font-size: 18px;
-    margin-left: 20px;
+    margin-left: 10px;
     cursor: default;
+    float: left;
   }
 
-  img {
-    padding: 10px;
+  .itemR {
+    display: flex;
+    float: right;
+    margin: 10px 10px 0 0;
+  }
+
+  .itemR-2 {
+    display: flex;
+    float: right;
+    margin: 15px 0 0 0;
+  }
+
+  .rowWrap {
+    display: flex;
+    flex-flow: row wrap;
+    // justify-content: center;
+    float: left;
+    margin: 10px 10px 0 10px;
   }
 }
 
-.footer__items {
-  display: flex;
+#pBy {
+  float: right;
+  margin: 0 10px 0 10px;
 }

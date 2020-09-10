@@ -53,7 +53,7 @@ class Task extends Component<IProps, any> {
       <div className="task">
         <p style={this.styleCompleted()}>
           {"Number: "}
-          {task.id}
+          {task.id + 1}
           {" / "}
           {"Title: "}
           {task.title}

@@ -38,19 +38,23 @@ module.exports = {
         test: /\.js?$/,
         loader: "source-map-loader",
       },
-
       {
-        test: /\.s[ac]ss$/i,
+        // test: /\.s[ac]ss$/i,
+        test: /\.scss$/i,
         use: [
           // Creates `style` nodes from JS strings
-          "style-loader",
+          {
+            loader: "style-loader",
+          },
           // Translates CSS into CommonJS
-          "css-loader",
+          {
+            loader: "css-loader",
+          },
           // Compiles Sass to CSS
           "sass-loader",
         ],
       },
-
+      { test: /\.css$/, use: ["style-loader", "css-loader"] },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
