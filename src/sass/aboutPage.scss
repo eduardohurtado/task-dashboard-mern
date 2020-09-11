@@ -1,7 +1,6 @@
 .aboutPage {
   grid-column: 1 / span 3;
   grid-row: 2 / span 3;
-  text-align: center;
   overflow: auto;
 
   .aboutTitle {
@@ -17,22 +16,24 @@
     cursor: default;
   }
 
-  box-sizing: border-box;
-  background: url(../img/mern.jpg);
-  background-repeat: no-repeat;
-  background-size: 100vw 40vh;
-  background-attachment: fixed;
-
   .empty {
     width: 100%;
-    height: 30vh;
+    height: 350px;
+    background: url("../img/mern.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
   }
 
   .container {
     width: 100%;
     background: #ddd;
-    text-align: start;
-    // padding: 10px;
+  }
+
+  .bodyPage {
+    margin: auto;
+    padding: 10px;
+    width: 80%;
   }
 
   .center {
