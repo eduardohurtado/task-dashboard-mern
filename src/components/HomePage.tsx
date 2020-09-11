@@ -6,76 +6,65 @@ import LazyImage from "./tools/LazyImage";
 //Style SCSS
 import "../sass/homePage.scss";
 
-//Images
-import LogoHtml from "../img/html-5.png";
-import LogoScss from "../img/scss.png";
-import LogoReact from "../img/react.png";
-import LogoRedux from "../img/redux.png";
-import LogoTs from "../img/typescript.png";
-import LogoMongoDb from "../img/mongodb.png";
-import LogoExpress from "../img/express.png";
-import LogoNodeJs from "../img/nodejs.png";
-import LogojQuery from "../img/jquery.png";
-
 export default class HomePage extends Component {
   render() {
     const imageLogoHtml = {
       alt: "Html5",
       width: "79px",
       height: "110px",
-      src: LogoHtml,
+      src: "./src/img/html-5.png",
     };
     const imageLogoTs = {
       alt: "Typescript",
       width: "110px",
       height: "110px",
-      src: LogoTs,
+      src: "./src/img/typescript.png",
     };
     const imageLogoScss = {
       alt: "Sass",
       width: "148px",
       height: "110px",
-      src: LogoScss,
+      src: "./src/img/scss.png",
     };
     const imageLogojQuery = {
       alt: "jQuery",
       width: "110px",
       height: "110px",
-      src: LogojQuery,
+      src: "./src/img/jquery.png",
     };
     const imageLogoRedux = {
       alt: "Redux",
       width: "86px",
       height: "110px",
-      src: LogoRedux,
+      src: "./src/img/redux.png",
     };
 
     const imageLogoMongoDb = {
       alt: "MongoDb",
       width: "172px",
       height: "110px",
-      src: LogoMongoDb,
+      src: "./src/img/mongodb.png",
     };
 
     const imageLogoExpress = {
       alt: "Express",
       width: "110px",
       height: "110px",
-      src: LogoExpress,
+      src: "./src/img/express.png",
     };
 
     const imageLogoReact = {
       alt: "ReactJs",
       width: "96px",
       height: "110px",
-      src: LogoReact,
+      src: "./src/img/react.png",
     };
 
     const imageLogoNodeJs = {
       alt: "MongoDb",
       width: "101px",
       height: "110px",
-      src: LogoNodeJs,
+      src: "./src/img/nodejs.png",
     };
 
     return (

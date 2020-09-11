@@ -17,6 +17,9 @@ import ContactPage from "./components/ContactPage";
 import "./sass/normalize.scss";
 import "./sass/app.scss";
 
+//Font selector
+import "./fonts/fontSelector.scss";
+
 interface IProps {}
 
 //<any "props", any "state">

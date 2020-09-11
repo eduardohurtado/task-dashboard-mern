@@ -3,11 +3,6 @@ import React, { Component } from "react";
 //Tools
 import LazyImage from "./tools/LazyImage";
 
-//Images
-import LogoGit from "../img/github.png";
-import LogoLinkedIn from "../img/linkedin.png";
-import LogoWebpack from "../img/webpack.png";
-
 //Style SCSS
 import "../sass/footer.scss";
 
@@ -17,21 +12,21 @@ export default class Footer extends Component {
       alt: "MongoDb",
       width: "40px",
       height: "40px",
-      src: LogoGit,
+      src: "./src/img/github.png",
     };
 
     const imageLogoLinkedIn = {
       alt: "MongoDb",
       width: "40px",
       height: "40px",
-      src: LogoLinkedIn,
+      src: "./src/img/linkedin.png",
     };
 
     const imageLogoWebpack = {
       alt: "MongoDb",
       width: "104px",
       height: "30px",
-      src: LogoWebpack,
+      src: "./src/img/webpack.png",
     };
 
     return (

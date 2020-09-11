@@ -6,25 +6,35 @@ import LazyImage from "./tools/LazyImage";
 //Style SCSS
 import "../sass/aboutPage.scss";
 
-//Images
-import ImgMern1 from "../img/mern-stack-1.png";
-
 export default class AboutPage extends Component {
   render() {
     const mystyles = {
       color: "green",
     } as React.CSSProperties;
 
+    const imageBackground = {
+      alt: "Background",
+      width: "100%",
+      height: "350px",
+      src: "./src/img/mern.jpg",
+    };
+
     const imageMern = {
       alt: "MernStack",
       width: "85%",
       height: "auto",
-      src: ImgMern1,
+      src: "./src/img/mern-stack-1.png",
     };
 
     return (
       <div className="aboutPage">
-        <div className="empty"></div>
+        {/* <div className="empty"></div> */}
+        <LazyImage
+          alt={imageBackground.alt}
+          width={imageBackground.width}
+          height={imageBackground.height}
+          src={imageBackground.src}
+        />
         <div className="container">
           <div className="bodyPage">
             <div className="center">
@@ -35,7 +45,9 @@ export default class AboutPage extends Component {
               ReactJS and the Node environment, also, this is a React-Router
               multi tab and mobile first application.
             </p>
-            <h2 className="center">MERN STACK</h2>
+            <h2 className="center">
+              <b>MERN STACK</b>
+            </h2>
             <p>
               What is the MERN Stack? MERN stands for MongoDB, Express, React,
               Node, after the four key technologies that make up the stack.
@@ -60,7 +72,7 @@ export default class AboutPage extends Component {
               you choose, ME(RVA)N is the ideal approach to working with
               JavaScript and JSON, all the way through.
             </p>
-            <h2>How does the MERN stack work?</h2>
+            <h3>How does the MERN stack work?</h3>
             <p>
               The MERN architecture allows you to easily construct a 3-tier
               architecture (frontend, backend, database) entirely using
@@ -74,7 +86,7 @@ export default class AboutPage extends Component {
                 src={imageMern.src}
               />
             </div>
-            <h2>React.js Front End</h2>
+            <h3>React.js Front End</h3>
             <p>
               The top tier of the MERN stack is React.js, the declarative
               JavaScript framework for creating dynamic client-side applications
@@ -88,7 +100,7 @@ export default class AboutPage extends Component {
               whistles you’d expect from a modern web framework: great support
               for forms, error handling, events, lists, and more.
             </p>
-            <h2>Express.js and Node.js Server Tier</h2>
+            <h3>Express.js and Node.js Server Tier</h3>
             <p>
               The next level down is the Express.js server-side framework,
               running inside a Node.js server. Express.js bills itself as a
@@ -104,7 +116,7 @@ export default class AboutPage extends Component {
               Node.js drivers, either via callbacks for using Promises, to
               access and update data in your MongoDB database.
             </p>
-            <h2>MongoDB Database Tier</h2>
+            <h3>MongoDB Database Tier</h3>
             <p>
               If your application stores any data (user profiles, content,
               comments, uploads, events, etc.), then you’re going to want a
@@ -119,14 +131,14 @@ export default class AboutPage extends Component {
               cloud, you’ll want to look at Atlas. If you’re looking to set up
               your own MERN stack, read on!
             </p>
-            <h2>Is MERN a full-stack solution?</h2>
+            <h3>Is MERN a full-stack solution?</h3>
             <p>
               Yes, MERN is a full-stack, following the traditional 3-tier
               architectural pattern, including the front-end display tier
               (React.js), application tier (Express.js and Node.js), and
               database tier (MongoDB).
             </p>
-            <h2>Why choose the MERN stack?</h2>
+            <h3>Why choose the MERN stack?</h3>
             <p>
               Let’s start with MongoDB, the document database at the root of the
               MERN stack. MongoDB was designed to store JSON data natively (it
@@ -162,7 +174,7 @@ export default class AboutPage extends Component {
               MERN is the stack of choice for today’s web developers looking to
               move quickly, particularly for those with React.js experience.
             </p>
-            <h2>MERN Use Cases</h2>
+            <h3>MERN Use Cases</h3>
             <p>
               Like any web stack, you can build whatever you want in MERN -
               though it’s ideally suited for cases that are JSON-heavy,
@@ -176,10 +188,13 @@ export default class AboutPage extends Component {
               <li>Interactive forums / social products</li>
             </ul>
             <p>And whatever else you can dream up!</p>
-            <h2>Related Resources:</h2>
+            <h3>Related Resources:</h3>
             <ul>
               <li>
-                <a href="https://www.mongodb.com/mean-stack">
+                <a
+                  target="blank"
+                  href="https://en.wikipedia.org/wiki/MEAN_(solution_stack)"
+                >
                   <b style={mystyles}>What is the MEAN Stack?</b>
                 </a>
               </li>
