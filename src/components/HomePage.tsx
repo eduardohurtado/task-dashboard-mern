@@ -76,40 +76,46 @@ export default class HomePage extends Component {
         </p>
         <h2>Complementary technologies:</h2>
         <div className="rowWrap">
-          <LazyImage
-            alt={imageLogoHtml.alt}
-            width={imageLogoHtml.width}
-            height={imageLogoHtml.height}
-            src={imageLogoHtml.src}
-          />
-
-          <LazyImage
-            alt={imageLogoTs.alt}
-            width={imageLogoTs.width}
-            height={imageLogoTs.height}
-            src={imageLogoTs.src}
-          />
-
-          <LazyImage
-            alt={imageLogoScss.alt}
-            width={imageLogoScss.width}
-            height={imageLogoScss.height}
-            src={imageLogoScss.src}
-          />
-
-          <LazyImage
-            alt={imageLogojQuery.alt}
-            width={imageLogojQuery.width}
-            height={imageLogojQuery.height}
-            src={imageLogojQuery.src}
-          />
-
-          <LazyImage
-            alt={imageLogoRedux.alt}
-            width={imageLogoRedux.width}
-            height={imageLogoRedux.height}
-            src={imageLogoRedux.src}
-          />
+          <div className="marginPhoto">
+            <LazyImage
+              alt={imageLogoHtml.alt}
+              width={imageLogoHtml.width}
+              height={imageLogoHtml.height}
+              src={imageLogoHtml.src}
+            />
+          </div>
+          <div className="marginPhoto">
+            <LazyImage
+              alt={imageLogoTs.alt}
+              width={imageLogoTs.width}
+              height={imageLogoTs.height}
+              src={imageLogoTs.src}
+            />
+          </div>
+          <div className="marginPhoto">
+            <LazyImage
+              alt={imageLogoScss.alt}
+              width={imageLogoScss.width}
+              height={imageLogoScss.height}
+              src={imageLogoScss.src}
+            />
+          </div>
+          <div className="marginPhoto">
+            <LazyImage
+              alt={imageLogojQuery.alt}
+              width={imageLogojQuery.width}
+              height={imageLogojQuery.height}
+              src={imageLogojQuery.src}
+            />
+          </div>
+          <div className="marginPhoto">
+            <LazyImage
+              alt={imageLogoRedux.alt}
+              width={imageLogoRedux.width}
+              height={imageLogoRedux.height}
+              src={imageLogoRedux.src}
+            />
+          </div>
         </div>
         <h2>MERN stack:</h2>
         <h3 className="grayIncoming">
@@ -117,36 +123,43 @@ export default class HomePage extends Component {
         </h3>
         <div className="rowWrap">
           <div className="grayIncoming">
-            <LazyImage
-              alt={imageLogoMongoDb.alt}
-              width={imageLogoMongoDb.width}
-              height={imageLogoMongoDb.height}
-              src={imageLogoMongoDb.src}
-            />
+            <div className="marginPhoto">
+              <LazyImage
+                alt={imageLogoMongoDb.alt}
+                width={imageLogoMongoDb.width}
+                height={imageLogoMongoDb.height}
+                src={imageLogoMongoDb.src}
+              />
+            </div>
           </div>
           <div className="grayIncoming">
+            <div className="marginPhoto">
+              <LazyImage
+                alt={imageLogoExpress.alt}
+                width={imageLogoExpress.width}
+                height={imageLogoExpress.height}
+                src={imageLogoExpress.src}
+              />
+            </div>
+          </div>
+          <div className="marginPhoto">
             <LazyImage
-              alt={imageLogoExpress.alt}
-              width={imageLogoExpress.width}
-              height={imageLogoExpress.height}
-              src={imageLogoExpress.src}
+              alt={imageLogoReact.alt}
+              width={imageLogoReact.width}
+              height={imageLogoReact.height}
+              src={imageLogoReact.src}
             />
           </div>
 
-          <LazyImage
-            alt={imageLogoReact.alt}
-            width={imageLogoReact.width}
-            height={imageLogoReact.height}
-            src={imageLogoReact.src}
-          />
-
           <div className="grayIncoming">
-            <LazyImage
-              alt={imageLogoNodeJs.alt}
-              width={imageLogoNodeJs.width}
-              height={imageLogoNodeJs.height}
-              src={imageLogoNodeJs.src}
-            />
+            <div className="marginPhoto">
+              <LazyImage
+                alt={imageLogoNodeJs.alt}
+                width={imageLogoNodeJs.width}
+                height={imageLogoNodeJs.height}
+                src={imageLogoNodeJs.src}
+              />
+            </div>
           </div>
         </div>
       </div>
