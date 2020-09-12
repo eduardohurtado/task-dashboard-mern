@@ -12,59 +12,59 @@ export default class HomePage extends Component {
       alt: "Html5",
       width: "79px",
       height: "110px",
-      src: "./src/img/html-5.png",
+      src: "https://live.staticflickr.com/65535/50333700817_1d6375276a_o.png",
     };
     const imageLogoTs = {
       alt: "Typescript",
       width: "110px",
       height: "110px",
-      src: "./src/img/typescript.png",
+      src: "https://live.staticflickr.com/65535/50333700657_6a3caac13f_o.png",
     };
     const imageLogoScss = {
       alt: "Sass",
       width: "148px",
       height: "110px",
-      src: "./src/img/scss.png",
+      src: "https://live.staticflickr.com/65535/50333538596_c10e3d4982_o.png",
     };
     const imageLogojQuery = {
       alt: "jQuery",
       width: "110px",
       height: "110px",
-      src: "./src/img/jquery.png",
+      src: "https://live.staticflickr.com/65535/50333700787_ae6338edc8_o.png",
     };
     const imageLogoRedux = {
       alt: "Redux",
       width: "86px",
       height: "110px",
-      src: "./src/img/redux.png",
+      src: "https://live.staticflickr.com/65535/50333700672_353a8176dd_o.png",
     };
 
     const imageLogoMongoDb = {
       alt: "MongoDb",
       width: "172px",
       height: "110px",
-      src: "./src/img/mongodb.png",
+      src: "https://live.staticflickr.com/65535/50333700712_c834451cba_o.png",
     };
 
     const imageLogoExpress = {
       alt: "Express",
       width: "110px",
       height: "110px",
-      src: "./src/img/express.png",
+      src: "https://live.staticflickr.com/65535/50333700847_d060513f89_o.png",
     };
 
     const imageLogoReact = {
       alt: "ReactJs",
       width: "96px",
       height: "110px",
-      src: "./src/img/react.png",
+      src: "https://live.staticflickr.com/65535/50333538611_21d3ce9e96_o.png",
     };
 
     const imageLogoNodeJs = {
       alt: "MongoDb",
       width: "101px",
       height: "110px",
-      src: "./src/img/nodejs.png",
+      src: "https://live.staticflickr.com/65535/50332852038_40d099da0f_o.png",
     };
 
     return (

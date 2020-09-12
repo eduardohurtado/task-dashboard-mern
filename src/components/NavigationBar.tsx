@@ -5,9 +5,6 @@ import $ from "jquery";
 //Style SCSS
 import "../sass/navigationBar.scss";
 
-//Images
-import openMenu from "../img/open-menu.png";
-
 //Interfaces
 interface IProps {}
 
@@ -78,7 +75,11 @@ export default class NavigationBar extends Component<IProps, any> {
         <div className="navigationBar_responsive">
           <input type="checkbox" id="btn-menu" />
           <label htmlFor="btn-menu" className="labelButton">
-            <img src={openMenu} alt="open-menu" className="imageMenu" />
+            <img
+              src="https://live.staticflickr.com/65535/50333700692_688eb213ae_o.png"
+              alt="open-menu"
+              className="imageMenu"
+            />
           </label>
         </div>
 

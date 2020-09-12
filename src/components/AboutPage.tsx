@@ -16,14 +16,14 @@ export default class AboutPage extends Component {
       alt: "Background",
       width: "100%",
       height: "350px",
-      src: "./src/img/mern.jpg",
+      src: "https://live.staticflickr.com/65535/50332852108_a6ce357589_o.jpg",
     };
 
     const imageMern = {
       alt: "MernStack",
       width: "85%",
       height: "auto",
-      src: "./src/img/mern-stack-1.png",
+      src: "https://live.staticflickr.com/65535/50332852053_b201410fb1_o.png",
     };
 
     return (

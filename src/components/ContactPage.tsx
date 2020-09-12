@@ -14,7 +14,7 @@ export default class ContactPage extends Component {
       alt: "MongoDb",
       width: "70%",
       height: "auto",
-      src: "src/img/developer.png",
+      src: "https://live.staticflickr.com/65535/50333538761_b1174789bf_o.png",
     };
 
     return (

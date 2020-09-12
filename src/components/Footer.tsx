@@ -12,21 +12,21 @@ export default class Footer extends Component {
       alt: "MongoDb",
       width: "40px",
       height: "40px",
-      src: "./src/img/github.png",
+      src: "https://live.staticflickr.com/65535/50332852188_0319fc58d7_o.png",
     };
 
     const imageLogoLinkedIn = {
       alt: "MongoDb",
       width: "40px",
       height: "40px",
-      src: "./src/img/linkedin.png",
+      src: "https://live.staticflickr.com/65535/50333700777_f23cdc97e0_o.png",
     };
 
     const imageLogoWebpack = {
       alt: "MongoDb",
       width: "104px",
       height: "30px",
-      src: "./src/img/webpack.png",
+      src: "https://live.staticflickr.com/65535/50333700647_e72bfc1cd3_o.png",
     };
 
     return (
