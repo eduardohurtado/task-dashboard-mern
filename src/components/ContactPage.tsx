@@ -11,10 +11,10 @@ export default class ContactPage extends Component {
     // const placeholder = (<div className="holder"></div>);
 
     var imageImgDev = {
-      alt: "MongoDb",
-      width: "70%",
+      alt: "Developer",
+      width: "50%",
       height: "auto",
-      src: "https://live.staticflickr.com/65535/50333538761_b1174789bf_o.png",
+      src: "https://live.staticflickr.com/65535/50337942126_62e60b31c9_o.png",
     };
 
     return (
