@@ -118,29 +118,22 @@ export default class HomePage extends Component {
           </div>
         </div>
         <h2>MERN stack:</h2>
-        <h3 className="grayIncoming">
-          *Gray icons means that feature is in current develop*
-        </h3>
         <div className="rowWrap">
-          <div className="grayIncoming">
-            <div className="marginPhoto">
-              <LazyImage
-                alt={imageLogoMongoDb.alt}
-                width={imageLogoMongoDb.width}
-                height={imageLogoMongoDb.height}
-                src={imageLogoMongoDb.src}
-              />
-            </div>
+          <div className="marginPhoto">
+            <LazyImage
+              alt={imageLogoMongoDb.alt}
+              width={imageLogoMongoDb.width}
+              height={imageLogoMongoDb.height}
+              src={imageLogoMongoDb.src}
+            />
           </div>
-          <div className="grayIncoming">
-            <div className="marginPhoto">
-              <LazyImage
-                alt={imageLogoExpress.alt}
-                width={imageLogoExpress.width}
-                height={imageLogoExpress.height}
-                src={imageLogoExpress.src}
-              />
-            </div>
+          <div className="marginPhoto">
+            <LazyImage
+              alt={imageLogoExpress.alt}
+              width={imageLogoExpress.width}
+              height={imageLogoExpress.height}
+              src={imageLogoExpress.src}
+            />
           </div>
           <div className="marginPhoto">
             <LazyImage
@@ -150,16 +143,13 @@ export default class HomePage extends Component {
               src={imageLogoReact.src}
             />
           </div>
-
-          <div className="grayIncoming">
-            <div className="marginPhoto">
-              <LazyImage
-                alt={imageLogoNodeJs.alt}
-                width={imageLogoNodeJs.width}
-                height={imageLogoNodeJs.height}
-                src={imageLogoNodeJs.src}
-              />
-            </div>
+          <div className="marginPhoto">
+            <LazyImage
+              alt={imageLogoNodeJs.alt}
+              width={imageLogoNodeJs.width}
+              height={imageLogoNodeJs.height}
+              src={imageLogoNodeJs.src}
+            />
           </div>
         </div>
       </div>
