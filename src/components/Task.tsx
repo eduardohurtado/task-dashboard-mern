@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import "../sass/task.scss";
 
 //Internal CSS Style
-const btnDelete = {
+const styles = {
   background: "#e44336",
   color: "#FFF",
   border: "none",
@@ -44,8 +44,6 @@ class Task extends Component<IProps, any> {
     };
   }
 
-  componentDidMount() {}
-
   render() {
     let task = this.props.propTask;
 
@@ -72,7 +70,7 @@ class Task extends Component<IProps, any> {
           />{" "}
           {"Delete: "}
           <button
-            style={btnDelete}
+            style={styles}
             onClick={() => {
               this.props.deleteTaskRedux(task.id);
             }}

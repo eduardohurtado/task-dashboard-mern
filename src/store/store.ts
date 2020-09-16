@@ -90,17 +90,36 @@ const reducer = (state = initialState, action: IAction) => {
       tasks: state.tasks.filter((e) => e.id !== action.id),
     };
   } else if (action.type === "ADD_NEW_TASK") {
-    const newTask: INewTask = {
-      id: findFreeId(),
-      title: action.title,
-      description: action.description,
-      done: false,
-    };
-    return {
-      ...state,
+    console.log("REDUX ADD TASK");
+    if (action.title === "" || action.description === "") {
+      console.log("FATAL ERROR: Task title or description is empty.");
+    } else {
+      const newTask: INewTask = {
+        id: findFreeId(),
+        title: action.title,
+        description: action.description,
+        done: false,
+      };
 
-      tasks: [...state.tasks, newTask],
-    };
+      //Save the new task to Mongo DB
+      // fetch("/api/tasks", {
+      //   method: "POST",
+      //   body: JSON.stringify(newTask),
+      //   headers: {
+      //     Accept: "application/json",
+      //     "Content-type": "application/json",
+      //   },
+      // })
+      //   .then((res) => res.json())
+      //   .then((data) => console.log(data))
+      //   .catch((err) => console.log(err));
+
+      return {
+        ...state,
+
+        tasks: [...state.tasks, newTask],
+      };
+    }
   }
 
   return state;

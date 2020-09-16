@@ -6,7 +6,6 @@ import "../sass/taskForm.scss";
 //Global state REDUX
 import { connect } from "react-redux";
 import { AnyAction } from "redux";
-// import { ThunkDispatch } from "redux-thunk";
 
 //Interfaces
 interface IProps {
@@ -16,7 +15,7 @@ interface IProps {
     description: string;
     done: boolean;
   };
-  addTaskRedux: (title: string, description: string) => void;
+  addTaskRedux: any;
 }
 
 interface IState {
@@ -104,24 +103,13 @@ const mapStateToProps = (state: IProps) => ({
 }); //define mapStateToProps.
 
 const mapDispatchToProps = (dispatch: any) => ({
-  addTaskRedux() {
+  addTaskRedux(title: string, description: string) {
     dispatch({
       type: "ADD_NEW_TASK",
-      title: "",
-      description: "",
+      title,
+      description,
     });
   },
 });
-
-// const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AnyAction>) => {
-//   return {
-//     addTaskRedux: () =>
-//       dispatch({
-//         type: "ADD_NEW_TASK",
-//         title: "",
-//         description: "",
-//       }),
-//   };
-// };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskForm);

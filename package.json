@@ -2,10 +2,12 @@
   "name": "task-dashboard-mern",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.tsx",
+  "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "devw": "webpack-dev-server",
     "build": "webpack"
   },
   "repository": {
@@ -15,6 +17,9 @@
   "author": "Eduardo Hurtado",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.5",
+    "morgan": "^1.10.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
@@ -22,6 +27,7 @@
     "redux": "^4.0.5"
   },
   "devDependencies": {
+    "@types/express": "^4.17.8",
     "@types/jquery": "^3.5.1",
     "@types/node": "^14.0.27",
     "@types/react": "^16.9.45",
@@ -36,6 +42,7 @@
     "image-webpack-loader": "^6.0.0",
     "jquery": "^3.5.1",
     "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
     "react-lazy-load-image-component": "^1.5.0",
     "sass-loader": "^9.0.3",
     "source-map-loader": "^1.0.1",

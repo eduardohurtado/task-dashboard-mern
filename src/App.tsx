@@ -41,11 +41,7 @@ export class App extends React.Component<IProps, any> {
               exact
               path="/About"
               render={() => {
-                return (
-                  <>
-                    <AboutPage />
-                  </>
-                );
+                return <AboutPage />;
               }}
             ></Route>
             <Route
