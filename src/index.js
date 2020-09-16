@@ -15,7 +15,7 @@ app.set("port", process.env.PORT || 8080);
 app.use(morgan("dev")); //dev Is the bash window text format.
 app.use(express.json()); //To understand Json format.
 
-//Server Routes
+//Server API Routes
 app.use("/api/tasks", require("./database/routes/task.routes"));
 
 //Server Static Files

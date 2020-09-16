@@ -15,10 +15,6 @@ const styles = {
   borderRadius: "20%",
   cursor: "pointer",
   fontSize: "10px",
-
-  shadow: {
-    boxShadow: "0 5px 3px 2px #9E9E9E",
-  },
 };
 
 //Interfaces
@@ -48,13 +44,11 @@ class Task extends Component<IProps, any> {
     };
   }
 
-  componentDidMount() {}
-
   render() {
     let task = this.props.propTask;
 
     return (
-      <div className="task" style={styles.shadow}>
+      <div className="task">
         <p style={this.styleCompleted()}>
           {"Number: "}
           {task.id + 1}
