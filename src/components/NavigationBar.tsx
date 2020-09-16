@@ -33,7 +33,7 @@ export default class NavigationBar extends Component<IProps, any> {
     //Adjust the app in diferent screen sizes.
     $(window).resize(() => {
       if ($(window).width() === undefined) {
-        alert("Faltal error: Window.width() is 'undefined'");
+        alert("Faltal error: $Window.width() is 'undefined'");
         console.log("Faltal error: Window.width() is 'undefined'");
       } else {
         if ($(window).width()! >= 769) {

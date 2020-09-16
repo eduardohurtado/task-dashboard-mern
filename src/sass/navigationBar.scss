@@ -8,6 +8,7 @@ $breakpoint-tablet: 768px;
     grid-row: 1 / span 1;
     background-color: #464866;
     display: flex;
+    box-shadow: 0 1px 3px 2px #9E9E9E;
 
     input[type="checkbox"] {
       display: none;
@@ -74,6 +75,7 @@ $breakpoint-tablet: 768px;
     grid-column: 1 / span 3;
     grid-row: 1 / span 1;
     background-color: #464866;
+    box-shadow: 0 1px 3px 2px #9E9E9E;
 
     ul {
       list-style: none;
