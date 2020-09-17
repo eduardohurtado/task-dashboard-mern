@@ -20,14 +20,14 @@ const styles = {
 //Interfaces
 interface IProps {
   propTask: {
-    id: number;
+    id: string;
     title: string;
     description: string;
     done: boolean;
   };
 
-  checkDoneRedux: (id: number) => void;
-  deleteTaskRedux: (id: number) => void;
+  checkDoneRedux: (id: string) => void;
+  deleteTaskRedux: (id: string) => void;
 }
 
 class Task extends Component<IProps, any> {
@@ -89,14 +89,14 @@ const mapStateToProps = (state: IProps) => ({
 }); //define mapStateToProps.
 
 const mapDispatchToProps = (dispatch: any) => ({
-  checkDoneRedux(id: number) {
+  checkDoneRedux(id: string) {
     dispatch({
       type: "TASK_TEXT_STYLE",
       id,
     });
   },
 
-  deleteTaskRedux(id: number) {
+  deleteTaskRedux(id: string) {
     dispatch({
       type: "TASK_DELETE",
       id,

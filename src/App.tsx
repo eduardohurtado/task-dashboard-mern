@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 //Global state Redux
 import { Provider } from "react-redux";
 import store from "./store/store";
+import StoreAdmin from "./store/Store.Admin";
 
 //Components
 import NavigationBar from "./components/NavigationBar";
@@ -60,6 +61,7 @@ export class App extends React.Component<IProps, any> {
             <Footer />
           </div>
         </Router>
+        <StoreAdmin />
       </Provider>
     );
   }

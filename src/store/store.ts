@@ -1,9 +1,10 @@
 import { createStore } from "redux";
+import Tasks from "../components/Tasks";
 
 //Interfaces
-export interface IAppState {
+interface IAppStateMongo {
   tasks: {
-    id: number;
+    id: string;
     title: string;
     description: string;
     done: boolean;
@@ -12,73 +13,52 @@ export interface IAppState {
 
 interface IAction {
   type: string;
-  id: number;
+  id: string;
   title: string;
   description: string;
 }
 
 interface INewTask {
-  id: number;
+  id: string;
   title: string;
   description: string;
   done: boolean;
 }
 
-interface INewTask2 {
-  title: string;
-  description: string;
-  done: boolean;
-}
-
-//Initial state
-const initialState: IAppState = {
+//Initial state from server
+const initialStateMongo: IAppStateMongo = {
   tasks: [
     {
-      id: 0,
+      id: "xoxo",
       title: "BUY GROCERIES",
       description: "Buy 2 eggs, 3 carrots and one liter of milk.",
-      done: false,
-    },
-    {
-      id: 1,
-      title: "CALL MOM :)",
-      description: "Don't forget to call mom at 14:00h.",
-      done: false,
-    },
-    {
-      id: 2,
-      title: "FINISH THE ESSAY",
-      description: "Collect the remaining information.",
       done: false,
     },
   ],
 };
 
-const reducer = (state = initialState, action: IAction) => {
-  function findFreeId(): number {
-    var idFree = 0;
-    var flag = false; //This flag controls if the id is taked by another component.
-    var arrayTaskIdRedux = [];
-
-    function checkIdIsFree(id: number) {
-      return id !== idFree;
-    }
-
-    for (let i = 0; i < state.tasks.length; i++) {
-      arrayTaskIdRedux[i] = state.tasks[i].id;
-    }
-
-    do {
-      flag = arrayTaskIdRedux.every(checkIdIsFree);
-      if (flag === false) {
-        idFree += 1;
-      }
-    } while (flag === false);
-    flag = false;
-    return idFree;
+const reducer = (state = initialStateMongo, action: IAction) => {
+  function renameKeys(e: any): any {
+    // function to rename ID
+    e = e.map((obj: any) => {
+      obj["id"] = obj["_id"]; // Assign new key
+      delete obj["_id"]; // Delete old key
+      delete obj["__v"];
+      return obj;
+    });
+    return e;
   }
 
-  if (action.type === "TASK_TEXT_STYLE") {
+  if (action.type === "UPDATE_TASKS_FROM_SERVER") {
+    var taskFromMongo: any = [];
+    fetch("/api/tasks")
+      .then((res) => res.json())
+      .then((data) => {
+        taskFromMongo = renameKeys(data);
+        state.tasks = taskFromMongo; //NEED TO TRIGGER A RENDER
+        console.log(state.tasks);
+      });
+  } else if (action.type === "TASK_TEXT_STYLE") {
     return {
       ...state,
 
@@ -101,18 +81,11 @@ const reducer = (state = initialState, action: IAction) => {
       console.log("FATAL ERROR: Task title or description is empty.");
     } else {
       const newTask: INewTask = {
-        id: findFreeId(),
+        id: "xoxo",
         title: action.title,
         description: action.description,
         done: false,
       };
-
-      const newTask2: INewTask2 = {
-        title: action.title,
-        description: action.description,
-        done: false,
-      };
-
       //Save the new task to Mongo DB
       // fetch("/api/tasks", {
       //   method: "POST",
