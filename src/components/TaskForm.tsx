@@ -50,6 +50,10 @@ class TaskForm extends Component<IProps, IState, AnyAction> {
         this.state.title.toUpperCase(),
         this.state.description
       );
+      this.setState({
+        title: "",
+        description: "",
+      });
     }
   };
 

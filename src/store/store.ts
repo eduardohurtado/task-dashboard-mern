@@ -24,6 +24,12 @@ interface INewTask {
   done: boolean;
 }
 
+interface INewTask2 {
+  title: string;
+  description: string;
+  done: boolean;
+}
+
 //Initial state
 const initialState: IAppState = {
   tasks: [
@@ -101,13 +107,19 @@ const reducer = (state = initialState, action: IAction) => {
         done: false,
       };
 
+      const newTask2: INewTask2 = {
+        title: action.title,
+        description: action.description,
+        done: false,
+      };
+
       //Save the new task to Mongo DB
       // fetch("/api/tasks", {
       //   method: "POST",
-      //   body: JSON.stringify(newTask),
+      //   body: JSON.stringify(newTask2),
       //   headers: {
-      //     Accept: "application/json",
-      //     "Content-type": "application/json",
+      //     "Accept": "application/json",
+      //     "Content-Type": "application/json",
       //   },
       // })
       //   .then((res) => res.json())
