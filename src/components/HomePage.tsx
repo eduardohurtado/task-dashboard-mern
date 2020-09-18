@@ -32,11 +32,11 @@ export default class HomePage extends Component {
       height: "110px",
       src: "https://live.staticflickr.com/65535/50333700787_ae6338edc8_o.png",
     };
-    const imageLogoRedux = {
-      alt: "Redux",
-      width: "86px",
+    const imageLogoReduxSaga = {
+      alt: "Redux Saga",
+      width: "141px",
       height: "110px",
-      src: "https://live.staticflickr.com/65535/50333700672_353a8176dd_o.png",
+      src: "https://live.staticflickr.com/65535/50356118402_622d1aa218_o.png",
     };
 
     const imageLogoMongoDb = {
@@ -110,10 +110,10 @@ export default class HomePage extends Component {
           </div>
           <div className="marginPhoto">
             <LazyImage
-              alt={imageLogoRedux.alt}
-              width={imageLogoRedux.width}
-              height={imageLogoRedux.height}
-              src={imageLogoRedux.src}
+              alt={imageLogoReduxSaga.alt}
+              width={imageLogoReduxSaga.width}
+              height={imageLogoReduxSaga.height}
+              src={imageLogoReduxSaga.src}
             />
           </div>
         </div>

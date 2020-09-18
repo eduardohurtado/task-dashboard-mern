@@ -1,6 +1,3 @@
-import { createStore } from "redux";
-import Tasks from "../components/Tasks";
-
 //Interfaces
 interface IAppStateMongo {
   tasks: {
@@ -16,6 +13,7 @@ interface IAction {
   id: string;
   title: string;
   description: string;
+  payload: any;
 }
 
 interface INewTask {
@@ -25,39 +23,31 @@ interface INewTask {
   done: boolean;
 }
 
-//Initial state from server
+//APP default initial state
 const initialStateMongo: IAppStateMongo = {
   tasks: [
     {
-      id: "xoxo",
-      title: "BUY GROCERIES",
-      description: "Buy 2 eggs, 3 carrots and one liter of milk.",
+      id: "1",
+      title: "DOWNLOADING TASKS FROM MONGO DB",
+      description: "The software is loading...",
+      done: false,
+    },
+    {
+      id: "2",
+      title: "DOWNLOADING TASKS FROM MONGO DB",
+      description: "The software is loading...",
       done: false,
     },
   ],
 };
 
 const reducer = (state = initialStateMongo, action: IAction) => {
-  function renameKeys(e: any): any {
-    // function to rename ID
-    e = e.map((obj: any) => {
-      obj["id"] = obj["_id"]; // Assign new key
-      delete obj["_id"]; // Delete old key
-      delete obj["__v"];
-      return obj;
-    });
-    return e;
-  }
+  if (action.type === "DOWNLOAD_TASKS_MONGO_ASYNC") {
+    return {
+      ...state,
 
-  if (action.type === "UPDATE_TASKS_FROM_SERVER") {
-    var taskFromMongo: any = [];
-    fetch("/api/tasks")
-      .then((res) => res.json())
-      .then((data) => {
-        taskFromMongo = renameKeys(data);
-        state.tasks = taskFromMongo; //NEED TO TRIGGER A RENDER
-        console.log(state.tasks);
-      });
+      tasks: action.payload,
+    };
   } else if (action.type === "TASK_TEXT_STYLE") {
     return {
       ...state,
@@ -75,39 +65,9 @@ const reducer = (state = initialStateMongo, action: IAction) => {
 
       tasks: state.tasks.filter((e) => e.id !== action.id),
     };
-  } else if (action.type === "ADD_NEW_TASK") {
-    console.log("REDUX ADD TASK");
-    if (action.title === "" || action.description === "") {
-      console.log("FATAL ERROR: Task title or description is empty.");
-    } else {
-      const newTask: INewTask = {
-        id: "xoxo",
-        title: action.title,
-        description: action.description,
-        done: false,
-      };
-      //Save the new task to Mongo DB
-      // fetch("/api/tasks", {
-      //   method: "POST",
-      //   body: JSON.stringify(newTask2),
-      //   headers: {
-      //     "Accept": "application/json",
-      //     "Content-Type": "application/json",
-      //   },
-      // })
-      //   .then((res) => res.json())
-      //   .then((data) => console.log(data))
-      //   .catch((err) => console.log(err));
-
-      return {
-        ...state,
-
-        tasks: [...state.tasks, newTask],
-      };
-    }
   }
 
   return state;
 };
 
-export default createStore(reducer);
+export default reducer;

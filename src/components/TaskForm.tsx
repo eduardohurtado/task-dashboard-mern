@@ -101,19 +101,18 @@ class TaskForm extends Component<IProps, IState, AnyAction> {
   }
 }
 
-const mapStateToProps = (state: IProps) => ({
-  //Passing the current state of "store.js" because
-  Redux: state, //mapDispatchToProps don't work without
-}); //define mapStateToProps.
+const mapStateToProps = (state: IProps) => {
+  return {
+    //Passing the current state of "store.js" because
+    Redux: state, //mapDispatchToProps don't work without
+  }; //define mapStateToProps.
+};
 
-const mapDispatchToProps = (dispatch: any) => ({
-  addTaskRedux(title: string, description: string) {
-    dispatch({
-      type: "ADD_NEW_TASK",
-      title,
-      description,
-    });
-  },
-});
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    addTaskRedux: (title: string, description: string) =>
+      dispatch({ type: "ADD_NEW_TASK", title, description }),
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskForm);

@@ -50,8 +50,8 @@ class Task extends Component<IProps, any> {
     return (
       <div className="task">
         <p style={this.styleCompleted()}>
-          {"Number: "}
-          {task.id + 1}
+          {"ID: "}
+          {task.id}
           {" / "}
           {"Title: "}
           {task.title}

@@ -1,10 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-//Global state Redux
-import { Provider } from "react-redux";
-import store from "./store/store";
-import StoreAdmin from "./store/Store.Admin";
+//Global state REDUX
+import { connect } from "react-redux";
+import { AnyAction } from "redux";
 
 //Components
 import NavigationBar from "./components/NavigationBar";
@@ -21,48 +20,75 @@ import "./sass/app.scss";
 //Font selector
 import "./fonts/fontSelector.scss";
 
-interface IProps {}
+//Interfaces
+interface IProps {
+  downloadTasksMongo: any;
+}
 
 //<any "props", any "state">
-export class App extends React.Component<IProps, any> {
+class App extends React.Component<IProps, any> {
+  constructor(props: IProps) {
+    super(props);
+
+    this.state = {
+      title: "",
+      description: "",
+    };
+  }
+  componentDidMount() {
+    console.log("-APP COMPONENT DID MOUNT-");
+    this.props.downloadTasksMongo();
+  }
   render() {
     return (
-      <Provider store={store}>
-        <Router>
-          <div className="gridContainer">
-            <NavigationBar />
-            <Route
-              exact
-              path="/"
-              render={() => {
-                return <HomePage />;
-              }}
-            ></Route>
-            <Route
-              exact
-              path="/About"
-              render={() => {
-                return <AboutPage />;
-              }}
-            ></Route>
-            <Route
-              exact
-              path="/Contact"
-              render={() => {
-                return <ContactPage />;
-              }}
-            ></Route>
-            <Route
-              path="/TaskDashboard"
-              render={() => {
-                return <TaskDashboardPage />;
-              }}
-            ></Route>
-            <Footer />
-          </div>
-        </Router>
-        <StoreAdmin />
-      </Provider>
+      <Router>
+        <div className="gridContainer">
+          <NavigationBar />
+          <Route
+            exact
+            path="/"
+            render={() => {
+              return <HomePage />;
+            }}
+          ></Route>
+          <Route
+            exact
+            path="/About"
+            render={() => {
+              return <AboutPage />;
+            }}
+          ></Route>
+          <Route
+            exact
+            path="/Contact"
+            render={() => {
+              return <ContactPage />;
+            }}
+          ></Route>
+          <Route
+            path="/TaskDashboard"
+            render={() => {
+              return <TaskDashboardPage />;
+            }}
+          ></Route>
+          <Footer />
+        </div>
+      </Router>
     );
   }
 }
+
+const mapStateToProps = (state: IProps) => {
+  return {
+    //Passing the current state of "store.js" because
+    Redux: state, //mapDispatchToProps don't work without
+  }; //define mapStateToProps.
+};
+
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    downloadTasksMongo: () => dispatch({ type: "DOWNLOAD_TASKS_MONGO" }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
