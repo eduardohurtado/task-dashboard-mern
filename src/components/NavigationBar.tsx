@@ -36,7 +36,7 @@ export default class NavigationBar extends Component<IProps, any> {
         alert("Faltal error: $Window.width() is 'undefined'");
         console.log("Faltal error: Window.width() is 'undefined'");
       } else {
-        if ($(window).width()! >= 769) {
+        if ($(window).width()! >= 768) {
           $(".navigationBar").show();
           $(".navigationBar_responsive").hide();
           this.setState({ menuChecked: false });

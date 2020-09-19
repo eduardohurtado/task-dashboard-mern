@@ -59,12 +59,8 @@ const reducer = (state = initialStateMongo, action: IAction) => {
         return e;
       }),
     };
-  } else if (action.type === "TASK_DELETE") {
-    return {
-      ...state,
-
-      tasks: state.tasks.filter((e) => e.id !== action.id),
-    };
+  } else if (action.type === "TASK_DELETE_ASYNC") {
+    console.log("Task deleted from server:", action.id);
   }
 
   return state;

@@ -12,7 +12,7 @@ const app = express();
 app.set("port", process.env.PORT || 8080);
 
 //Server Middlewares
-app.use(morgan("dev")); //dev Is the bash window text format.
+app.use(morgan("dev")); //"dev" Is the bash window text format.
 app.use(express.json()); //To understand Json format.
 
 //Server API Routes
