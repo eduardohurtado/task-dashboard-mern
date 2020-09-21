@@ -21,8 +21,8 @@
     "isolatedModules": false,
     "noEmit": true
   },
-  "include": ["./src/**/*"]
-  // "include": [
-  //   "src"
-  // ]
+  // "include": ["./src/**/*"]
+   "include": [
+     "src"
+   ]
 }

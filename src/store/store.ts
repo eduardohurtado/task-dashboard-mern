@@ -6,6 +6,7 @@ interface IAppStateMongo {
     description: string;
     done: boolean;
   }[];
+  isLoading: boolean;
 }
 
 interface IAction {
@@ -16,29 +17,10 @@ interface IAction {
   payload: any;
 }
 
-interface INewTask {
-  id: string;
-  title: string;
-  description: string;
-  done: boolean;
-}
-
 //APP default initial state
 const initialStateMongo: IAppStateMongo = {
-  tasks: [
-    {
-      id: "1",
-      title: "DOWNLOADING TASKS FROM MONGO DB",
-      description: "The software is loading...",
-      done: false,
-    },
-    {
-      id: "2",
-      title: "DOWNLOADING TASKS FROM MONGO DB",
-      description: "The software is loading...",
-      done: false,
-    },
-  ],
+  tasks: [],
+  isLoading: true,
 };
 
 const reducer = (state = initialStateMongo, action: IAction) => {

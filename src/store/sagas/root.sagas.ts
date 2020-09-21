@@ -1,4 +1,5 @@
 import { takeLatest, all, put } from "redux-saga/effects";
+import { notifySuccess } from "../../components/tools/Notification/Notification";
 
 //Interfaces
 interface IAction {
@@ -57,7 +58,10 @@ function* addTaskReduxAsync(action: IAction) {
       "Content-Type": "application/json",
     },
   })
-    .then((res) => res.json())
+    .then((res) => {
+      notifySuccess("Success!", "The new task was saved.");
+      res.json();
+    })
     .then((data) => console.log(data))
     .catch((err) => console.log(err));
 

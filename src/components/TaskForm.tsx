@@ -1,9 +1,7 @@
-import React, { Component, CSSProperties } from "react";
+import React, { Component } from "react";
 
-//Store notification component
-import { store } from "react-notifications-component";
-import "animate.css/animate.compat.css";
-import Icon from "../img/ok-16.png";
+//Notification
+import { notifyDanger } from "./tools/Notification/Notification";
 
 //Style SCSS
 import "../sass/taskForm.scss";
@@ -48,65 +46,18 @@ class TaskForm extends Component<IProps, IState, AnyAction> {
 
   onSubmit = (e: ISubmitEvent) => {
     e.preventDefault();
-    // if (this.state.title === "" || this.state.description === "") {
-    //   alert("Please, fill all the requested information.");
-    // } else {
-    //   this.props.addTaskRedux(
-    //     this.state.title.toUpperCase(),
-    //     this.state.description
-    //   );
-    //   this.setState({
-    //     title: "",
-    //     description: "",
-    //   });
-    // }
-
-    var divStyle: CSSProperties = {
-      background: "green",
-      boxSizing: "border-box",
-      width: "100%",
-      display: "flex",
-    };
-
-    var uno: CSSProperties = {
-      margin: "30px 30px 0 10px",
-    };
-
-    var dos: CSSProperties = {
-      margin: "0 10px 0 0",
-    };
-
-    const inconPass = (
-      <div style={divStyle}>
-        <div style={uno}>
-          <img
-            alt="lol"
-            src="https://www.iconsdb.com/icons/preview/white/ok-xxl.png"
-            width="32px"
-            height="32px"
-          />
-        </div>
-        <div style={dos}>
-          <h3>Title</h3>
-          <p>Description</p>
-        </div>
-      </div>
-    );
-
-    store.addNotification({
-      // title: "Wonderful!",
-      // message: "teodosii@react",
-      // type: "danger",
-      insert: "top",
-      container: "top-center",
-      content: inconPass,
-      animationIn: ["animated", "flipInX"],
-      animationOut: ["animated", "fadeOut"],
-      dismiss: {
-        duration: 3000,
-        pauseOnHover: true,
-      },
-    });
+    if (this.state.title === "" || this.state.description === "") {
+      notifyDanger("ERROR", "Please, fill all the requested information.");
+    } else {
+      this.props.addTaskRedux(
+        this.state.title.toUpperCase(),
+        this.state.description
+      );
+      this.setState({
+        title: "",
+        description: "",
+      });
+    }
   };
 
   onChange = (e: IChangeEvent) => {

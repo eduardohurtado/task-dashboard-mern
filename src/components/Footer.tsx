@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 //Tools
-import LazyImage from "./tools/LazyImage";
+import LazyImage from "./tools/LazyImage/LazyImage";
 
 //Style SCSS
 import "../sass/footer.scss";

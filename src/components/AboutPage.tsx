@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 //Tools
-import LazyImage from "./tools/LazyImage";
+import LazyImage from "./tools/LazyImage/LazyImage";
 
 //Style SCSS
 import "../sass/aboutPage.scss";
@@ -21,9 +21,16 @@ export default class AboutPage extends Component {
 
     const imageMern = {
       alt: "MernStack",
-      width: "85%",
+      width: "90%",
       height: "auto",
       src: "https://live.staticflickr.com/65535/50332852053_b201410fb1_o.png",
+    };
+
+    const imageReduxSaga = {
+      alt: "Redux-Saga",
+      width: "90%",
+      height: "auto",
+      src: "https://live.staticflickr.com/65535/50367614133_206fe7df36_o.gif",
     };
 
     return (
@@ -42,8 +49,61 @@ export default class AboutPage extends Component {
             </div>
             <p>
               This software was born as a personal practice to improve skills in
-              ReactJS and the Node environment, also, this is a React-Router
-              multi tab and mobile first application.
+              ReactJS and the Node environment, also, this is a{" "}
+              <b style={mystyles}>React-Router </b>
+              multi tab and <b style={mystyles}>mobile first</b> application,
+              global state provided by Redux-Saga and Webpack production
+              bundling practice.
+            </p>
+            <h2 className="center">
+              <b>REDUX SAGA FULLSTACK IMPLEMENTATION</b>
+            </h2>
+            <div className="center">
+              <LazyImage
+                alt={imageReduxSaga.alt}
+                width={imageReduxSaga.width}
+                height={imageReduxSaga.height}
+                src={imageReduxSaga.src}
+              />
+            </div>
+            <h3>Why Sagas?</h3>
+            <p>
+              In a large application you tend to have loads of async actions,
+              all handling their own side effects. Instead of scattering them,
+              you group logically related pieces of behavior in a program called
+              saga.
+            </p>
+            <h3>What Are Sagas?</h3>
+            <p>
+              Sagas, are declarative and well organized way to express the
+              side-effects. They are useful when you need a process to
+              coordinate with multiple action creators and side-effects.
+            </p>
+            <p>
+              Imagine saga like a separate thread in your application that’s
+              solely responsible for side effects. This thread can be started,
+              paused and cancelled from the main application with normal redux
+              actions, it has access to the full redux application state and it
+              can dispatch redux actions as well.
+            </p>
+            <p>
+              Sagas, are declarative and well organized way to express the
+              side-effects. They are useful when you need a process to
+              coordinate with multiple action creators and side-effects. Imagine
+              saga like a separate thread in your application that’s solely
+              responsible for side effects. This thread can be started, paused
+              and cancelled from the main application with normal redux actions,
+              it has access to the full redux application state and it can
+              dispatch redux actions as well.
+            </p>
+            <p>
+              Sagas are implemented as{" "}
+              <b style={mystyles}>ES6 Generator functions</b> that yield objects
+              to the redux-saga middleware. The yielded objects are a kind of
+              instruction to be interpreted by the middleware. When a Promise is
+              yielded to the middleware, the middleware will suspend the Saga
+              until the Promise completes. These generators make the
+              asynchronous flows easy to read, write and test.
             </p>
             <h2 className="center">
               <b>MERN STACK</b>
