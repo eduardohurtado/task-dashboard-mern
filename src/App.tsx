@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 //Global state REDUX
 import { connect } from "react-redux";
-import { AnyAction } from "redux";
 
 //Components
 import NavigationBar from "./components/NavigationBar";
@@ -12,6 +11,10 @@ import Footer from "./components/Footer";
 import AboutPage from "./components/AboutPage";
 import TaskDashboardPage from "./components/TaskDashboardPage";
 import ContactPage from "./components/ContactPage";
+
+//Notification component
+import ReactNotification from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
 
 //Style
 import "./sass/normalize.scss";
@@ -42,6 +45,7 @@ class App extends React.Component<IProps, any> {
   render() {
     return (
       <Router>
+        <ReactNotification />
         <div className="gridContainer">
           <NavigationBar />
           <Route

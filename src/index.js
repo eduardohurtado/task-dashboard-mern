@@ -3,7 +3,7 @@ const morgan = require("morgan");
 const path = require("path");
 
 //Database Conection
-const { mongoose } = require("./database/database");
+require("./database/database");
 
 //Server
 const app = express();

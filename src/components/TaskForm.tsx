@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 
+//Store notification component
+import { store } from "react-notifications-component";
+import "animate.css/animate.compat.css";
+
 //Style SCSS
 import "../sass/taskForm.scss";
 
@@ -43,18 +47,32 @@ class TaskForm extends Component<IProps, IState, AnyAction> {
 
   onSubmit = (e: ISubmitEvent) => {
     e.preventDefault();
-    if (this.state.title === "" || this.state.description === "") {
-      alert("Please, fill all the requested information.");
-    } else {
-      this.props.addTaskRedux(
-        this.state.title.toUpperCase(),
-        this.state.description
-      );
-      this.setState({
-        title: "",
-        description: "",
-      });
-    }
+    // if (this.state.title === "" || this.state.description === "") {
+    //   alert("Please, fill all the requested information.");
+    // } else {
+    //   this.props.addTaskRedux(
+    //     this.state.title.toUpperCase(),
+    //     this.state.description
+    //   );
+    //   this.setState({
+    //     title: "",
+    //     description: "",
+    //   });
+    // }
+
+    store.addNotification({
+      title: "Wonderful!",
+      message: "teodosii@react",
+      type: "success",
+      insert: "top",
+      container: "top-center",
+      animationIn: ["animated", "fadeIn"],
+      animationOut: ["animated", "fadeOut"],
+      dismiss: {
+        duration: 3000,
+        pauseOnHover: true,
+      },
+    });
   };
 
   onChange = (e: IChangeEvent) => {
