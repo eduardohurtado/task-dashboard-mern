@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, CSSProperties } from "react";
 
 //Store notification component
 import { store } from "react-notifications-component";
 import "animate.css/animate.compat.css";
+import Icon from "../img/ok-16.png";
 
 //Style SCSS
 import "../sass/taskForm.scss";
@@ -60,13 +61,46 @@ class TaskForm extends Component<IProps, IState, AnyAction> {
     //   });
     // }
 
+    var divStyle: CSSProperties = {
+      background: "green",
+      boxSizing: "border-box",
+      width: "100%",
+      display: "flex",
+    };
+
+    var uno: CSSProperties = {
+      margin: "30px 30px 0 10px",
+    };
+
+    var dos: CSSProperties = {
+      margin: "0 10px 0 0",
+    };
+
+    const inconPass = (
+      <div style={divStyle}>
+        <div style={uno}>
+          <img
+            alt="lol"
+            src="https://www.iconsdb.com/icons/preview/white/ok-xxl.png"
+            width="32px"
+            height="32px"
+          />
+        </div>
+        <div style={dos}>
+          <h3>Title</h3>
+          <p>Description</p>
+        </div>
+      </div>
+    );
+
     store.addNotification({
-      title: "Wonderful!",
-      message: "teodosii@react",
-      type: "success",
+      // title: "Wonderful!",
+      // message: "teodosii@react",
+      // type: "danger",
       insert: "top",
       container: "top-center",
-      animationIn: ["animated", "fadeIn"],
+      content: inconPass,
+      animationIn: ["animated", "flipInX"],
       animationOut: ["animated", "fadeOut"],
       dismiss: {
         duration: 3000,
