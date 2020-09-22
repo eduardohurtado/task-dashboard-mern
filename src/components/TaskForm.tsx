@@ -48,6 +48,9 @@ class TaskForm extends Component<IProps, IState, AnyAction> {
     e.preventDefault();
     if (this.state.title === "" || this.state.description === "") {
       notifyDanger("ERROR", "Please, fill all the requested information.");
+      console.error(
+        "Error: fill all the requested information on 'Add a new task'."
+      );
     } else {
       this.props.addTaskRedux(
         this.state.title.toUpperCase(),

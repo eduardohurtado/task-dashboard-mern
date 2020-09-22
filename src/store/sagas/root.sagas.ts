@@ -7,6 +7,7 @@ interface IAction {
   id: string;
   title: string;
   description: string;
+  done: boolean;
   payload: any[];
 }
 
@@ -85,10 +86,33 @@ function* deleteTaskReduxAsync(action: IAction) {
   yield put({ type: "TASK_DELETE_ASYNC", id });
 }
 
+function* checkDoneAsync(action: IAction) {
+  let updateTask: INewTask = {
+    title: action.title,
+    description: action.description,
+    done: !action.done,
+  };
+
+  yield fetch(`/api/tasks/${action.id}`, {
+    method: "PUT",
+    body: JSON.stringify(updateTask),
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err));
+
+  yield downloadTasksAsync();
+}
+
 export function* watchAll() {
   yield all([
     takeLatest("DOWNLOAD_TASKS_MONGO", downloadTasksAsync),
     takeLatest("ADD_NEW_TASK", addTaskReduxAsync),
     takeLatest("TASK_DELETE", deleteTaskReduxAsync),
+    takeLatest("TASK_DONE", checkDoneAsync),
   ]);
 }

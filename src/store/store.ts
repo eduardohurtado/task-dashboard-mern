@@ -25,22 +25,18 @@ const initialStateMongo: IAppStateMongo = {
 
 const reducer = (state = initialStateMongo, action: IAction) => {
   if (action.type === "DOWNLOAD_TASKS_MONGO_ASYNC") {
+    const checkIfEmpty = (): boolean => {
+      if (action.payload.length < 1) {
+        return true;
+      } else {
+        return false;
+      }
+    };
     return {
       ...state,
 
       tasks: action.payload,
-      isLoading: false,
-    };
-  } else if (action.type === "TASK_TEXT_STYLE") {
-    return {
-      ...state,
-
-      tasks: state.tasks.map((e) => {
-        if (e.id === action.id) {
-          e.done = !e.done;
-        }
-        return e;
-      }),
+      isLoading: checkIfEmpty(),
     };
   } else if (action.type === "TASK_DELETE_ASYNC") {
     console.log("Task deleted from server:", action.id);
