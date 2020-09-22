@@ -29,6 +29,7 @@ const reducer = (state = initialStateMongo, action: IAction) => {
       ...state,
 
       tasks: action.payload,
+      isLoading: false,
     };
   } else if (action.type === "TASK_TEXT_STYLE") {
     return {

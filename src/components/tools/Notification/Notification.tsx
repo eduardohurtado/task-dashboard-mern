@@ -56,7 +56,7 @@ export function notifySuccess(title: string, message: string): void {
     animationIn: ["animated", "flipInX"],
     animationOut: ["animated", "fadeOut"],
     dismiss: {
-      duration: 3000,
+      duration: 5000,
       pauseOnHover: true,
     },
   });
@@ -113,7 +113,7 @@ export function notifyDanger(title: string, message: string): void {
     animationIn: ["animated", "flipInX"],
     animationOut: ["animated", "fadeOut"],
     dismiss: {
-      duration: 3000,
+      duration: 5000,
       pauseOnHover: true,
     },
   });

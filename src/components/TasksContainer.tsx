@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { unmountComponentAtNode } from "react-dom";
-import $ from "jquery";
 
 //Loading
 import ReactLoading from "react-loading";
@@ -24,16 +22,6 @@ class TasksContainer extends Component<IProps, any, any> {
     super(props);
   }
 
-  componentDidMount() {
-    $(".tasksArea").on("click", () => {
-      alert("click motherfucker");
-    });
-
-    // $(".center").hide();
-
-    console.log(this.props);
-  }
-
   render() {
     return (
       <div className="tasksArea">
@@ -42,10 +30,10 @@ class TasksContainer extends Component<IProps, any, any> {
           <div id="lolz" className="center">
             {this.props.Redux.isLoading && (
               <ReactLoading
-                type="spokes"
+                type="bars"
                 color="#55F"
-                height={"30%"}
-                width={"30%"}
+                height={"20%"}
+                width={"20%"}
               />
             )}
           </div>
