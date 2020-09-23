@@ -9,24 +9,24 @@ import "../sass/footer.scss";
 export default class Footer extends Component {
   render() {
     const imageLogoGit = {
-      alt: "MongoDb",
+      alt: "LogoGit",
       width: "40px",
       height: "40px",
-      src: "https://live.staticflickr.com/65535/50332852188_0319fc58d7_o.png",
+      src: "https://live.staticflickr.com/65535/50375858387_0b21b6af07_o.png",
     };
 
     const imageLogoLinkedIn = {
-      alt: "MongoDb",
+      alt: "LogoLinkedIn",
       width: "40px",
       height: "40px",
-      src: "https://live.staticflickr.com/65535/50333700777_f23cdc97e0_o.png",
+      src: "https://live.staticflickr.com/65535/50375683541_764c299e4b_o.png",
     };
 
     const imageLogoWebpack = {
-      alt: "MongoDb",
+      alt: "LogoWebpack",
       width: "104px",
       height: "30px",
-      src: "https://live.staticflickr.com/65535/50333700647_e72bfc1cd3_o.png",
+      src: "https://live.staticflickr.com/65535/50375606586_46902351c9_o.png",
     };
 
     return (

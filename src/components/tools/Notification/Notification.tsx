@@ -33,7 +33,7 @@ export function notifySuccess(title: string, message: string): void {
       <div style={iconStyle}>
         <img
           alt="Check"
-          src="https://live.staticflickr.com/65535/50367840552_943371c552_o.png"
+          src="https://live.staticflickr.com/65535/50375798931_cceea26c79_o.png"
           width="32px"
           height="32px"
         />
@@ -90,8 +90,8 @@ export function notifyDanger(title: string, message: string): void {
       <div style={divSide}></div>
       <div style={iconStyle}>
         <img
-          alt="Check"
-          src="https://live.staticflickr.com/65535/50367620628_edb5271090_o.png"
+          alt="Error"
+          src="https://live.staticflickr.com/65535/50375806451_0db9564b9d_o.png"
           width="32px"
           height="32px"
         />

@@ -16,7 +16,7 @@ module.exports = {
     }),
   ],
 
-  devtool: "source-map",
+  // devtool: "source-map",
 
   devServer: {
     port: 3000,

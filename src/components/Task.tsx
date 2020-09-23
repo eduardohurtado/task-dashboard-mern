@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import $ from "jquery";
 
 //Global state REDUX
 import { connect } from "react-redux";
@@ -14,8 +15,14 @@ const styles = {
   padding: "6px 15px",
   borderRadius: "8px",
   cursor: "pointer",
-  fontSize: "10px",
+  fontSize: "18px",
   marginLeft: "10px",
+};
+
+const doneTextStyle = {
+  display: "inline",
+  fontSize: "20px",
+  marginRight: "10px",
 };
 
 //Interfaces
@@ -43,7 +50,7 @@ class Task extends Component<IProps, any> {
 
   styleCompleted() {
     return {
-      fontSize: "15px",
+      fontSize: "16px",
       padding: "5px",
       color: this.props.propTask.done ? "gray" : "white",
       textDecoration: this.props.propTask.done ? "line-through" : "none",
@@ -56,10 +63,10 @@ class Task extends Component<IProps, any> {
     return (
       <div className="task">
         <p style={this.styleCompleted()}>
-          {"ID: "}
+          {/* {"ID: "}
           {task.id}
-          {" / "}
-          {"Title: "}
+          {" / "} */}
+          {/* {"Title: "} */}
           {task.title}
           <br />
           <br />
@@ -67,9 +74,11 @@ class Task extends Component<IProps, any> {
           {task.description}
           <br />
           <br />
-          {"Mark as done: "}
+          <p style={doneTextStyle}>Done:</p>
+
           <input
             type="checkbox"
+            checked={task.done}
             onChange={() => {
               this.props.checkDoneRedux(
                 task.id,

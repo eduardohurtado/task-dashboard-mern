@@ -12,59 +12,59 @@ export default class HomePage extends Component {
       alt: "Html5",
       width: "79px",
       height: "110px",
-      src: "https://live.staticflickr.com/65535/50333700817_1d6375276a_o.png",
+      src: "https://live.staticflickr.com/65535/50375762576_b01ac0b821_o.png",
     };
     const imageLogoTs = {
       alt: "Typescript",
       width: "110px",
       height: "110px",
-      src: "https://live.staticflickr.com/65535/50333700657_6a3caac13f_o.png",
+      src: "https://live.staticflickr.com/65535/50375934352_e29b64610c_o.png",
     };
     const imageLogoScss = {
       alt: "Sass",
       width: "148px",
       height: "110px",
-      src: "https://live.staticflickr.com/65535/50333538596_c10e3d4982_o.png",
+      src: "https://live.staticflickr.com/65535/50375773251_a6687d4fac_o.png",
     };
     const imageLogojQuery = {
       alt: "jQuery",
       width: "110px",
       height: "110px",
-      src: "https://live.staticflickr.com/65535/50333700787_ae6338edc8_o.png",
+      src: "https://live.staticflickr.com/65535/50375081263_aaf39d097d_o.png",
     };
     const imageLogoReduxSaga = {
       alt: "Redux Saga",
       width: "141px",
       height: "110px",
-      src: "https://live.staticflickr.com/65535/50356118402_622d1aa218_o.png",
+      src: "https://live.staticflickr.com/65535/50375954397_4622f014e7_o.png",
     };
 
     const imageLogoMongoDb = {
       alt: "MongoDb",
       width: "172px",
       height: "110px",
-      src: "https://live.staticflickr.com/65535/50333700712_c834451cba_o.png",
+      src: "https://live.staticflickr.com/65535/50375005883_42c309563a_o.png",
     };
 
     const imageLogoExpress = {
       alt: "Express",
       width: "110px",
       height: "110px",
-      src: "https://live.staticflickr.com/65535/50333700847_d060513f89_o.png",
+      src: "https://live.staticflickr.com/65535/50375043378_4a8b260ebb_o.png",
     };
 
     const imageLogoReact = {
       alt: "ReactJs",
       width: "96px",
       height: "110px",
-      src: "https://live.staticflickr.com/65535/50333538611_21d3ce9e96_o.png",
+      src: "https://live.staticflickr.com/65535/50375049578_86298fb86b_o.png",
     };
 
     const imageLogoNodeJs = {
       alt: "MongoDb",
       width: "101px",
       height: "110px",
-      src: "https://live.staticflickr.com/65535/50332852038_40d099da0f_o.png",
+      src: "https://live.staticflickr.com/65535/50375055268_d232b7d345_o.png",
     };
 
     return (

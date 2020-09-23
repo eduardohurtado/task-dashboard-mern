@@ -5,4 +5,14 @@
   text-align: center;
   overflow: auto;
   box-shadow: 0 4px 3px 2px #959595;
+
+  input[type="checkbox"] {
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari and Chrome */
+    -o-transform: scale(2); /* Opera */
+    transform: scale(2);
+    padding: 10px;
+  }
 }
