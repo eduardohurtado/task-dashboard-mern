@@ -19,6 +19,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^5.10.5",
+    "morgan": "^1.10.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
@@ -45,7 +46,6 @@
     "image-webpack-loader": "^6.0.0",
     "jest": "^26.4.2",
     "jquery": "^3.5.1",
-    "morgan": "^1.10.0",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "react-lazy-load-image-component": "^1.5.0",
