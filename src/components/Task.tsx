@@ -86,9 +86,6 @@ class Task extends Component<IProps, any> {
                 task.description,
                 task.done
               );
-              console.log(`Task title: ${task.title}`);
-              console.log(`Task description: ${task.description}`);
-              console.log(`Task done: ${task.done}`);
             }}
           />
           <button

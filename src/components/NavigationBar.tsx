@@ -26,12 +26,12 @@ export default class NavigationBar extends Component<IProps, any> {
   }
 
   componentDidMount() {
-    $("#btn-menu").click(() => {
+    $("#btn-menu").on("click", () => {
       this.toggleMenuRes();
     });
 
     //Adjust the app in diferent screen sizes.
-    $(window).resize(() => {
+    $(window).on("resize", () => {
       if ($(window).width() === undefined) {
         alert("Faltal error: $Window.width() is 'undefined'");
         console.log("Faltal error: Window.width() is 'undefined'");
@@ -53,7 +53,7 @@ export default class NavigationBar extends Component<IProps, any> {
     const $labelButton = $(".labelButton");
     const $imageMenu = $(".imageMenu");
 
-    $(document).mouseup((e: any) => {
+    $(document).on("mouseup", (e: any) => {
       if (
         !$menu.is(e.target) && // if the target of the click isn't the container...
         !$navigationBarResponsive.is(e.target) &&
