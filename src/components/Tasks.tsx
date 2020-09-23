@@ -9,7 +9,7 @@ import Task from "./Task";
 //Interfaces
 interface IProps {
   tasks?: {
-    id: number;
+    id: string;
     title: string;
     description: string;
     done: boolean;

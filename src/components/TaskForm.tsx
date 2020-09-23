@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+//Notification
+import { notifyDanger } from "./tools/Notification/Notification";
+
 //Style SCSS
 import "../sass/taskForm.scss";
 
@@ -10,7 +13,7 @@ import { AnyAction } from "redux";
 //Interfaces
 interface IProps {
   tasks?: {
-    id: number;
+    id: string;
     title: string;
     description: string;
     done: boolean;
@@ -44,7 +47,10 @@ class TaskForm extends Component<IProps, IState, AnyAction> {
   onSubmit = (e: ISubmitEvent) => {
     e.preventDefault();
     if (this.state.title === "" || this.state.description === "") {
-      alert("Please, fill all the requested information.");
+      notifyDanger("ERROR", "Please, fill all the requested information.");
+      console.error(
+        "Error: fill all the requested information on 'Add a new task'."
+      );
     } else {
       this.props.addTaskRedux(
         this.state.title.toUpperCase(),
@@ -101,19 +107,18 @@ class TaskForm extends Component<IProps, IState, AnyAction> {
   }
 }
 
-const mapStateToProps = (state: IProps) => ({
-  //Passing the current state of "store.js" because
-  Redux: state, //mapDispatchToProps don't work without
-}); //define mapStateToProps.
+const mapStateToProps = (state: IProps) => {
+  return {
+    //Passing the current state of "store.js" because
+    Redux: state, //mapDispatchToProps don't work without
+  }; //define mapStateToProps.
+};
 
-const mapDispatchToProps = (dispatch: any) => ({
-  addTaskRedux(title: string, description: string) {
-    dispatch({
-      type: "ADD_NEW_TASK",
-      title,
-      description,
-    });
-  },
-});
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    addTaskRedux: (title: string, description: string) =>
+      dispatch({ type: "ADD_NEW_TASK", title, description }),
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskForm);

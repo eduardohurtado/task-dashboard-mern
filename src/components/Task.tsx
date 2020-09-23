@@ -8,26 +8,32 @@ import "../sass/task.scss";
 
 //Internal CSS Style
 const styles = {
-  background: "#e44336",
+  background: "#D35",
   color: "#FFF",
   border: "none",
-  padding: "8px 20px",
-  borderRadius: "20%",
+  padding: "6px 15px",
+  borderRadius: "8px",
   cursor: "pointer",
   fontSize: "10px",
+  marginLeft: "10px",
 };
 
 //Interfaces
 interface IProps {
   propTask: {
-    id: number;
+    id: string;
     title: string;
     description: string;
     done: boolean;
   };
 
-  checkDoneRedux: (id: number) => void;
-  deleteTaskRedux: (id: number) => void;
+  checkDoneRedux: (
+    id: string,
+    title: string,
+    description: string,
+    done: boolean
+  ) => void;
+  deleteTaskRedux: (id: string) => void;
 }
 
 class Task extends Component<IProps, any> {
@@ -50,8 +56,8 @@ class Task extends Component<IProps, any> {
     return (
       <div className="task">
         <p style={this.styleCompleted()}>
-          {"Number: "}
-          {task.id + 1}
+          {"ID: "}
+          {task.id}
           {" / "}
           {"Title: "}
           {task.title}
@@ -61,21 +67,35 @@ class Task extends Component<IProps, any> {
           {task.description}
           <br />
           <br />
-          {"Done: "}
+          {"Mark as done: "}
           <input
             type="checkbox"
             onChange={() => {
-              this.props.checkDoneRedux(task.id);
+              this.props.checkDoneRedux(
+                task.id,
+                task.title,
+                task.description,
+                task.done
+              );
+              console.log(`Task title: ${task.title}`);
+              console.log(`Task description: ${task.description}`);
+              console.log(`Task done: ${task.done}`);
             }}
-          />{" "}
-          {"Delete: "}
+          />
           <button
             style={styles}
             onClick={() => {
-              this.props.deleteTaskRedux(task.id);
+              if (confirm("¿Are you sure to delete the task?")) {
+                this.props.deleteTaskRedux(task.id);
+              }
             }}
           >
-            X
+            <img
+              alt="Dust-Bin"
+              src="https://live.staticflickr.com/65535/50372929266_ff2242337c_o.png"
+              width="16px"
+              height="16px"
+            ></img>
           </button>
         </p>
       </div>
@@ -89,14 +109,22 @@ const mapStateToProps = (state: IProps) => ({
 }); //define mapStateToProps.
 
 const mapDispatchToProps = (dispatch: any) => ({
-  checkDoneRedux(id: number) {
+  checkDoneRedux(
+    id: string,
+    title: string,
+    description: string,
+    done: boolean
+  ) {
     dispatch({
-      type: "TASK_TEXT_STYLE",
+      type: "TASK_DONE",
       id,
+      title,
+      description,
+      done,
     });
   },
 
-  deleteTaskRedux(id: number) {
+  deleteTaskRedux(id: string) {
     dispatch({
       type: "TASK_DELETE",
       id,
