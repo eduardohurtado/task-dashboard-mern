@@ -49,11 +49,12 @@ export default class AboutPage extends Component {
             </div>
             <p>
               This software was born as a personal practice to improve skills in
-              ReactJS and the Node environment, also, this is a{" "}
-              <b style={mystyles}>React-Router </b>
-              multi tab and <b style={mystyles}>mobile first</b> application,
-              global state provided by Redux-Saga and Webpack production
-              bundling practice.
+              ReactJS and the Node environment, fullstack MERN implementation
+              (CRUD) operational, also, this is a{" "}
+              <b style={mystyles}>React-Router</b> multi tab and{" "}
+              <b style={mystyles}>mobile first</b> application, global state
+              provided by Redux-Saga and production bundling practice powered by
+              Webpack.
             </p>
             <h2 className="center">
               <b>REDUX SAGA FULLSTACK IMPLEMENTATION</b>
@@ -74,18 +75,6 @@ export default class AboutPage extends Component {
               saga.
             </p>
             <h3>What Are Sagas?</h3>
-            <p>
-              Sagas, are declarative and well organized way to express the
-              side-effects. They are useful when you need a process to
-              coordinate with multiple action creators and side-effects.
-            </p>
-            <p>
-              Imagine saga like a separate thread in your application that’s
-              solely responsible for side effects. This thread can be started,
-              paused and cancelled from the main application with normal redux
-              actions, it has access to the full redux application state and it
-              can dispatch redux actions as well.
-            </p>
             <p>
               Sagas, are declarative and well organized way to express the
               side-effects. They are useful when you need a process to
@@ -211,7 +200,7 @@ export default class AboutPage extends Component {
               MongoDB works extremely well with Node.js, and makes storing,
               manipulating, and representing JSON data at every tier of your
               application incredibly easy. For cloud-native applications,
-              <b style={mystyles}>MongoDB Atlas</b> makes it even easier, by
+              <b style={mystyles}> MongoDB Atlas</b> makes it even easier, by
               giving you an auto-scaling MongoDB cluster on the cloud provider
               of your choice, as easy as a few button clicks.
             </p>

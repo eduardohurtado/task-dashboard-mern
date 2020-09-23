@@ -1,6 +1,6 @@
 # Task Dashboard MERN Stack
 
-This software was born as a personal practice to improve skills in ReactJS and the Node environment, fullstack MERN implementation, also, this is a React-Router multi tab and mobile first application, global state provided by Redux-Saga and Webpack production bundling practice.
+This software was born as a personal practice to improve skills in ReactJS and the Node environment, fullstack MERN implementation (CRUD) operational, also, this is a React-Router multi tab and mobile first application, global state provided by Redux-Saga and production bundling practice powered by Webpack.
 
 ![alt text](https://live.staticflickr.com/65535/50373167578_f4438133c0_o.jpg)
 
