@@ -160,7 +160,7 @@ export default class AboutPage extends Component {
             </p>
             <p>
               By making XML HTTP Requests (XHRs) or GETs or POSTs from your
-              Angular.js front-end, you can connect to Express.js functions that
+              React.js front-end, you can connect to Express.js functions that
               power your application. Those functions in turn use MongoDB’s
               Node.js drivers, either via callbacks for using Promises, to
               access and update data in your MongoDB database.
@@ -169,12 +169,12 @@ export default class AboutPage extends Component {
             <p>
               If your application stores any data (user profiles, content,
               comments, uploads, events, etc.), then you’re going to want a
-              database that’s just as easy to work with as Angular, Express, and
+              database that’s just as easy to work with as React, Express, and
               Node.
             </p>
             <p>
               That’s where MongoDB comes in: JSON documents created in your
-              Angular.js front end can be sent to the Express.js server, where
+              React.js front end can be sent to the Express.js server, where
               they can be processed and (assuming they’re valid) stored directly
               in MongoDB for later retrieval. Again, if you’re building in the
               cloud, you’ll want to look at Atlas. If you’re looking to set up
