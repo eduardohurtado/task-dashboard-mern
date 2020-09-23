@@ -1,14 +1,24 @@
-# Task Dashboard ReactJS MERN Stack (BETA VERSION)
+# Task Dashboard ReactJS MERN Stack
 
-This is a practice application to improve skills in ReactJS and the Node environment with the MERN stack.
+This software was born as a personal practice to improve skills in ReactJS and the Node environment, fullstack MERN implementation, also, this is a React-Router multi tab and mobile first application, global state provided by Redux-Saga and Webpack production bundling practice.
+
+![alt text](https://live.staticflickr.com/65535/50373167578_f4438133c0_o.jpg)
 
 ## Install the project
 
 Run `npm install` to download all the app dependencies.
 
-## Development server
+## App requeriments
 
-Run `npm start` for a dev server. Navigate to [http://localhost:8080](http://localhost:8080). The app will automatically reload if you change any of the source files.
+You need to have installed [Node Js](https://nodejs.org/en/) on your system to run the local online development server.
+
+## Online Development server
+
+Run `npm run build` to build the project, and then run `npm run devn` to start a dev local node server. Navigate to [http://localhost:8080](http://localhost:8080). The app will load the source files from the webpack build command.
+
+## Offline development server
+
+Run `npm run dev` for a webpack dev local server. Navigate to [http://localhost:3000](http://localhost:3000). The app will automatically reload if you change any of the source files, but this mode is only for layout React changes.
 
 ## Learn More
 
