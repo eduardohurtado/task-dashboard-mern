@@ -8,7 +8,7 @@ This software was born as a personal practice to improve skills in ReactJS and t
 
 Run `npm install` to download all the app dependencies.
 
-## App requeriments
+## App requirements
 
 You need to have installed [Node Js](https://nodejs.org/en/) on your system to run the local online development server.
 
