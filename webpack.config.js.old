@@ -2,8 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  //   entry: "./src/Index.App.tsx",
-  entry: ["babel-polyfill", "./src/Index.App.tsx"],
+  entry: "./src/Index.App.tsx",
   mode: "production",
   output: {
     path: path.resolve(__dirname, "build"),
@@ -17,7 +16,7 @@ module.exports = {
     }),
   ],
 
-  //   devtool: "source-map",
+  devtool: "source-map",
 
   devServer: {
     port: 3000,
@@ -32,16 +31,14 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: "babel-loader",
-        // use: "awesome-typescript-loader",
-        // include: [path.resolve(__dirname, "src")],
-        exclude: /node_modules/,
+        use: "awesome-typescript-loader",
+        include: [path.resolve(__dirname, "src")],
       },
-      //   {
-      //     enforce: "pre",
-      //     test: /\.js?$/,
-      //     loader: "source-map-loader",
-      //   },
+      {
+        enforce: "pre",
+        test: /\.js?$/,
+        loader: "source-map-loader",
+      },
       {
         // test: /\.s[ac]ss$/i,
         test: /\.scss$/i,
