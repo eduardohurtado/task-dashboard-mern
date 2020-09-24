@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import $ from "jquery";
 
 //Global state REDUX
 import { connect } from "react-redux";
@@ -74,7 +73,7 @@ class Task extends Component<IProps, any> {
           {task.description}
           <br />
           <br />
-          <p style={doneTextStyle}>Done:</p>
+          <span style={doneTextStyle}>Done:</span>
 
           <input
             type="checkbox"
