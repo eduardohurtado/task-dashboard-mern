@@ -25,18 +25,13 @@ import "./fonts/fontSelector.scss";
 
 //Interfaces
 interface IProps {
-  downloadTasksMongo: any;
+  downloadTasksMongo(): void;
 }
 
 //<any "props", any "state">
 class App extends React.Component<IProps, any> {
   constructor(props: IProps) {
     super(props);
-
-    this.state = {
-      title: "",
-      description: "",
-    };
   }
   componentDidMount() {
     console.log("-APP COMPONENT DID MOUNT-");

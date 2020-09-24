@@ -20,6 +20,10 @@ Run `npm run build` to build the project, and then run `npm run devn` to start a
 
 Run `npm run dev` for a webpack dev local server. Navigate to [http://localhost:3000](http://localhost:3000). The app will automatically reload if you change any of the source files, but this mode is only for layout React changes.
 
+## Run test
+
+Run `npm test` to execute all the functional and render test configured for the App, if you want to leave the test executer in "watch mode", just run `npm run testw` and all the tests will run automatically when you change any of the source files.
+
 ## Learn More
 
 To learn React, check out the [React documentation](https://reactjs.org/).
