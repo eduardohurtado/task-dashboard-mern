@@ -2,7 +2,6 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  //   entry: "./src/Index.App.tsx",
   entry: ["babel-polyfill", "./src/Index.App.tsx"],
   mode: "production",
   output: {
@@ -16,9 +15,7 @@ module.exports = {
       favicon: "./public/favicon.ico",
     }),
   ],
-
   //   devtool: "source-map",
-
   devServer: {
     port: 3000,
     historyApiFallback: true,
@@ -33,8 +30,6 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: "babel-loader",
-        // use: "awesome-typescript-loader",
-        // include: [path.resolve(__dirname, "src")],
         exclude: /node_modules/,
       },
       //   {
@@ -43,7 +38,6 @@ module.exports = {
       //     loader: "source-map-loader",
       //   },
       {
-        // test: /\.s[ac]ss$/i,
         test: /\.scss$/i,
         use: [
           // Creates `style` nodes from JS strings

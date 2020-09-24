@@ -20,9 +20,6 @@ app.use("/api/tasks", require("./database/routes/task.routes"));
 
 //Server Static Files
 app.use("/", express.static(path.join(__dirname, "../build")));
-app.use("/TaskDashboard", express.static(path.join(__dirname, "../build")));
-app.use("/About", express.static(path.join(__dirname, "../build")));
-app.use("/Contact", express.static(path.join(__dirname, "../build")));
 
 //Server Start
 app.listen(app.get("port"), () => {
