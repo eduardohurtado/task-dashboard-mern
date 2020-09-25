@@ -30,4 +30,5 @@ body {
   grid-template-rows: min-content repeat(3, 1fr) min-content;
   height: 100vh;
   margin: auto;
+  overflow: hidden;
 }
