@@ -38,15 +38,15 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-attachment: fixed;
-    animation: loadblur 0.5s 1;
+    // animation: loadblur 0.5s 1;
   }
 }
 
-@keyframes loadblur {
-  0% {
-    -webkit-filter: blur(20px);
-  }
-  100% {
-    -webkit-filter: blur(0);
-  }
-}
+// @keyframes loadblur {
+//   0% {
+//     -webkit-filter: blur(20px);
+//   }
+//   100% {
+//     -webkit-filter: blur(0);
+//   }
+// }
