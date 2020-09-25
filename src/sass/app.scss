@@ -5,7 +5,6 @@ html {
 body {
   background: radial-gradient(circle, #fff, #bbb);
   background-size: 100% 100%;
-  position: fixed;
   p,
   h1,
   h2,
@@ -32,4 +31,5 @@ body {
   height: 100vh;
   margin: auto;
   overflow: hidden;
+  position: fixed;
 }
