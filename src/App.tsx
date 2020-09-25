@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { HashRouter as Router, Route } from "react-router-dom";
 
 //Global state REDUX
@@ -8,9 +8,14 @@ import { connect } from "react-redux";
 import NavigationBar from "./components/NavigationBar";
 import HomePage from "./components/HomePage";
 import Footer from "./components/Footer";
-import AboutPage from "./components/AboutPage";
-import TaskDashboardPage from "./components/TaskDashboardPage";
-import ContactPage from "./components/ContactPage";
+
+//Lazy load components
+import Loading from "./components/Loading";
+const AboutPage = React.lazy(() => import("./components/AboutPage"));
+const ContactPage = React.lazy(() => import("./components/ContactPage"));
+const TaskDashboardPage = React.lazy(
+  () => import("./components/TaskDashboardPage")
+);
 
 //Notification component
 import ReactNotification from "react-notifications-component";
@@ -54,20 +59,32 @@ class App extends React.Component<IProps, any> {
             exact
             path="/About"
             render={() => {
-              return <AboutPage />;
+              return (
+                <Suspense fallback={<Loading />}>
+                  <AboutPage />
+                </Suspense>
+              );
             }}
           ></Route>
           <Route
             exact
             path="/Contact"
             render={() => {
-              return <ContactPage />;
+              return (
+                <Suspense fallback={<Loading />}>
+                  <ContactPage />
+                </Suspense>
+              );
             }}
           ></Route>
           <Route
             path="/TaskDashboard"
             render={() => {
-              return <TaskDashboardPage />;
+              return (
+                <Suspense fallback={<Loading />}>
+                  <TaskDashboardPage />
+                </Suspense>
+              );
             }}
           ></Route>
           <Footer />

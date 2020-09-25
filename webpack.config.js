@@ -3,12 +3,35 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: ["babel-polyfill", "./src/Index.App.tsx"],
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+      minSize: 20000,
+      maxSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
+      automaticNameDelimiter: "~",
+      enforceSizeThreshold: 50000,
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+      },
+    },
+  },
   mode: "production",
+  performance: { hints: false },
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "bundle.js",
   },
-
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
