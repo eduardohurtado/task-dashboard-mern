@@ -12,13 +12,6 @@ export default class AboutPage extends Component {
       color: "green",
     } as React.CSSProperties;
 
-    const imageBackground = {
-      alt: "Background",
-      width: "100%",
-      height: "350px",
-      src: "https://live.staticflickr.com/65535/50332852108_a6ce357589_o.jpg",
-    };
-
     const imageMern = {
       alt: "MernStack",
       width: "90%",
@@ -35,13 +28,7 @@ export default class AboutPage extends Component {
 
     return (
       <div className="aboutPage">
-        {/* <div className="empty"></div> */}
-        <LazyImage
-          alt={imageBackground.alt}
-          width={imageBackground.width}
-          height={imageBackground.height}
-          src={imageBackground.src}
-        />
+        <div className="bannerImage"></div>
         <div className="container">
           <div className="bodyPage">
             <div className="center">

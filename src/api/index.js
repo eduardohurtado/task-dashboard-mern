@@ -19,7 +19,7 @@ app.use(express.json()); //To understand Json format.
 app.use("/api/tasks", require("./database/routes/task.routes"));
 
 //Server Static Files
-app.use("/", express.static(path.join(__dirname, "../build")));
+app.use("/", express.static(path.join(__dirname, "../../build")));
 
 //Server Start
 app.listen(app.get("port"), () => {

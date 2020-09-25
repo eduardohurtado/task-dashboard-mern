@@ -2,12 +2,12 @@
   "name": "task-dashboard-mern",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.js",
+  "main": "./src/api/index.js",
   "scripts": {
     "test": "jest",
     "testw": "jest --watchAll",
-    "start": "node src/index.js",
-    "devn": "nodemon src/index.js",
+    "start": "node src/api/index.js",
+    "devn": "nodemon src/api/index.js",
     "dev": "webpack-dev-server",
     "build": "webpack"
   },
