@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: ["babel-polyfill", "./src/Index.App.tsx"],
+  entry: ["babel-polyfill", "./src/Index.tsx"],
   optimization: {
     splitChunks: {
       chunks: "all",
