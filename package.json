@@ -2,11 +2,11 @@
   "name": "task-dashboard-mern",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/api/restfull/index.js",
+  "main": "./src/api/graphql/index.js",
   "scripts": {
     "test": "jest",
     "testw": "jest --watchAll",
-    "start": "node src/api/restfull/index.js",
+    "start": "",
     "startg": "nodemon --exec babel-node src/api/graphql/index.js",
     "devn": "nodemon src/api/restfull/index.js",
     "dev": "webpack-dev-server",
@@ -20,6 +20,7 @@
   "author": "Eduardo Hurtado",
   "license": "ISC",
   "dependencies": {
+    "@apollo/client": "^3.2.1",
     "express": "^4.17.1",
     "express-graphql": "^0.11.0",
     "graphql": "^15.3.0",

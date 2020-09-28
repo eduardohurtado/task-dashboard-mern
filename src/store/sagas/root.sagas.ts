@@ -1,6 +1,9 @@
 import { takeLatest, all, put } from "redux-saga/effects";
 import { notifySuccess } from "../../components/tools/Notification/Notification";
 
+//GraphQL
+// import { useQuery, gql } from "@apollo/client";
+
 //Interfaces
 interface IAction {
   type: string;
@@ -28,17 +31,29 @@ function renameKeys(e: any): any {
   return e;
 }
 
-function* downloadTasksAsync() {
-  var payload: any[] = [];
-  yield fetch("/api/tasks")
-    .then((res) => res.json())
-    .then((data) => {
-      payload = renameKeys(data);
-      console.log("DATA FOM MONGO DB SERVER:");
-      console.log(payload);
-    });
+// function* downloadTasksAsync() {
+//   var payload: any[] = [];
+//   yield fetch("/api/tasks")
+//     .then((res) => res.json())
+//     .then((data) => {
+//       payload = renameKeys(data);
+//       console.log("DATA FOM MONGO DB SERVER:");
+//       console.log(payload);
+//     });
 
-  yield put({ type: "DOWNLOAD_TASKS_MONGO_ASYNC", payload });
+//   yield put({ type: "DOWNLOAD_TASKS_MONGO_ASYNC", payload });
+// }
+
+function download() {
+  // const { loading, error, data } = useQuery(GET_ALL_TASKS);
+  // if (loading) return console.log("...Is loading.");
+  // if (error) return console.error(error);
+  // return console.log(data);
+}
+
+function* downloadTasksAsync() {
+  console.log("Try to download");
+  download();
 }
 
 function* addTaskReduxAsync(action: IAction) {

@@ -1,11 +1,11 @@
 import express from "express";
 import morgan from "morgan";
+import path from "path";
 import { graphqlHTTP } from "express-graphql";
 import schema from "./database/schema/schema";
 
 //Database Conection
-import connect from "./database/database";
-connect;
+import "./database/database";
 
 //Server
 const app = express();
@@ -32,6 +32,7 @@ app.use(
 //Server API Routes
 
 //Server Static Files
+app.use("/", express.static(path.join(__dirname, "../../../build")));
 
 //Server Start
 app.listen(app.get("port"), () => {

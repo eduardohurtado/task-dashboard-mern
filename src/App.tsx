@@ -9,6 +9,9 @@ import NavigationBar from "./components/NavigationBar";
 import HomePage from "./components/HomePage";
 import Footer from "./components/Footer";
 
+//GraphQL
+import GQL from "./components/tools/GraphQL/GraphQL.js";
+
 //Lazy load components
 import Loading from "./components/Loading";
 const AboutPage = React.lazy(() => import("./components/AboutPage"));
@@ -46,6 +49,7 @@ class App extends React.Component<IProps, any> {
     return (
       <Router>
         <ReactNotification />
+        {/* <GQL /> */}
         <div className="gridContainer">
           <NavigationBar />
           <Route
