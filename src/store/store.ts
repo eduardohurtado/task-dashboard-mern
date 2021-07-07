@@ -25,19 +25,19 @@ const initialStateMongo: IAppStateMongo = {
 
 const reducer = (state = initialStateMongo, action: IAction) => {
   if (action.type === "DOWNLOAD_TASKS_MONGO_ASYNC") {
-    const checkIfEmpty = (): boolean => {
-      if (action.payload.length < 1) {
-        return true;
-      } else {
-        return false;
-      }
-    };
-    return {
-      ...state,
+    // const checkIfEmpty = (): boolean => {
+    //   if (action.payload.length < 1) {
+    //     return true;
+    //   } else {
+    //     return false;
+    //   }
+    // };
+    // return {
+    //   ...state,
 
-      tasks: action.payload,
-      isLoading: checkIfEmpty(),
-    };
+    //   tasks: action.payload,
+    //   isLoading: checkIfEmpty(),
+    // };
   } else if (action.type === "TASK_DELETE_ASYNC") {
     console.log("Task deleted from server:", action.id);
   }
